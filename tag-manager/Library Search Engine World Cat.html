@@ -60,7 +60,7 @@
                   <div class="block">
                      <span>
                          <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text" id="q" 
-                                onkeypress="return submitenter(this,event);" 
+                                onkeypress=if(event.keyCode==13)submitWC(); 
                                 onfocus="clearWCSearch();" 
                                 onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/> 
                      </span>
