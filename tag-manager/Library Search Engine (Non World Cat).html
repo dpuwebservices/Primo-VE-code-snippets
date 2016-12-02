@@ -1,0 +1,54 @@
+<script>
+function submitIS() {
+  var issearch = "//vufind.carli.illinois.edu/vf-dpu/Search/Home?lookfor=" + document.getElementsByName('Search_Ar')[0].value + '&type=' + document.getElementById('searchType').value + '&start_over=1&submit=Find&search=new';
+  window.open(issearch);
+  document.getElementsByName('q')[0].value = "Search I-Share";
+}
+
+function clearISSearch() {
+  document.getElementsByName('Search_Ar')[0].value = "";
+}
+</script>
+
+<!--Begin WorldCat Local Search Box-->
+<div class="worldcat">
+  <div class="skinsstructure1 skin-simple-transparent-tan">
+    <div class="media-body">
+      <div class="full-width unit">
+        <div id="wcl_container" class="block">
+          <div class="left worldcat-margin">
+            <h2 class="obj-inline margin075em-right">Search DePaul VuFind Catalog</h2>
+          </div>
+          <input value="affiliate" name="qt" type="hidden" />
+          <input value="wclocal_813" name="ai" type="hidden" />
+          <div id="wcl_searchbox" class="block">
+            <div class="block">
+              <label class="hidden" for="searchType">Search Type</label><span class="hpadding">
+<select id="searchType" name="type"> 
+ <option value="all">Keyword</option>
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="subject">Subject</option>
+                            <option value="isn">ISBN/ISSN</option>
+</select> 
+<input name="oldscope" type="hidden"/> 
+</span>
+              <span>
+<input value="Search DePaul VuFind" onfocus="clearISSearch()" onkeypress="return submitenter(this,event)" id="Search_Ar" class="wcl_text" title="Search I-Share" name="Search_Ar" type="text"/>
+</span>
+              <span>
+<input value="Search" onclick="submitIS(); return false;" id="wcl_search_button" type="submit"/> 
+        </span>
+            </div>
+          </div>
+          <div id="advanced" class="vpadding block right">
+            <span class="left">
+<a target="_parent" title="A to Z Databases" href="http://library.depaul.edu/find/Pages/Articles-A-Z-Databases-and-Journals.aspx">A-Z Databases &amp; Journals</a></span> <span class="left sep">| </span>
+            <span>
+<a target="_parent" title="Research Guides" href="/get-help/Pages/Research-Guides.aspx">Research Guides</a>
+</span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
