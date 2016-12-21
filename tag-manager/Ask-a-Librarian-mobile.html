@@ -1,0 +1,51 @@
+<script src="https://libraryh3lp.com/presence/jid/dpulibrarian/chat.libraryh3lp.com/js" type="text/javascript"></script><script>
+
+
+
+
+$(document).ready(function () {
+        show_presence2();
+});
+
+function show_presence2() { 
+        for (var i = 0; i < jabber_resources.length; ++i) { 
+         var resource = jabber_resources[i]; 
+          if (resource.show === "available" || resource.show === "chat") { 
+               document.getElementById('online2').style.display = ''; 
+          } 
+        } 
+      } 
+
+
+	    function askChat() {
+	        var url = "http://libraryh3lp.com/chat/dpulibrarian@chat.libraryh3lp.com?skin=22365&amp;theme=flat-chat-bubbles&amp;title=Ask%20a%20Librarian&amp;identity=dpulibrarian#";
+	        var width = 300;
+	        var height = 400;
+	        var left = 0;
+	        var top = 0;
+	        var params = 'width=' + width + ', height=' + height;
+	        params += ', top=' + top + ', left=' + left;
+	        params += ', directories=no';
+	        params += ', location=no';
+	        params += ', menubar=no';
+	        params += ', resizable=no';
+	        params += ', scrollbars=yes';
+	        params += ', status=no';
+	        params += ', toolbar=no';
+
+	        window.open(url, 'AskWindow', params);
+	    }</script>
+
+
+
+
+
+<div class="ask-librarian"><div class="skinsstructure1 skin-simple-transparent-tan"><div class="media-body"><h3 class="media-heading">Ask a Librarian</h3>
+<div id="online2" style="display: none;"><a class="cta-type4 cta-lib-green" onclick="askChat()" href="#">Chat Now!</a> <p class="nopadding-top nomargin-all">Or contact us by:</p></div>
+<div class="cta-row size1of1 centering-content"><a class="cta-type5 cta-lib-gray" href="http://library.depaul.edu/about/contact-us/Pages/default.aspx" target="_blank">Phone</a> <a class="phone cta-type5 cta-lib-gray" href="sms:7735702275">Text</a> <a class="hide-phone cta-type5 cta-lib-gray" href="/get-help/ask-a-librarian/Pages/default.aspx" target="_blank">Text</a> <a class="cta-type5 cta-lib-gray" href="/get-help/ask-a-librarian/Pages/Email-a-Librarian.aspx" target="_blank">Email</a> </div>
+<div class="clear-both">&#160;</div>
+<div class="centering-content medium margin1em-bottom">
+<a target="_blank" href="http://library.depaul.edu/get-help/ask-a-librarian/Pages/Make-an-Appointment.aspx">Make Appointment</a></div>
+  </div></div></div>
+<div class="margin1em-bottom"></div>
+<div id="library-hours"><a class="media-obj padding05em centering-content cta-lib-tan" href="/about/hours/Pages/default.aspx">Library Hours</a></div>
