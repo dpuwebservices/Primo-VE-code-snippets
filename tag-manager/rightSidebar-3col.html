@@ -1,16 +1,85 @@
-<!DOCTYPE html>
+<script type="text/javascript" src="https://libraryh3lp.com/presence/jid/dpulibrarian/chat.libraryh3lp.com/js"></script>
+
+<script>
+
+$(document).ready(function () {
+        show_presence();
+$('a.askChatLink').click(function(e) {
+e.preventDefault();
+askChat();
+});
+});
+
+function show_presence() {
+        for (var i = 0; i < jabber_resources.length; ++i) {
+         var resource = jabber_resources[i];
+          if (resource.show === "available" || resource.show === "chat") {
+               document.getElementById('online').style.display = '';
+          }
+        }
+      }
+
+
+function askChat() {
+        var url = "//libraryh3lp.com/chat/dpulibrarian@chat.libraryh3lp.com?skin=22365&theme=flat-chat-bubbles&identity=dpulibrarian#&title=Ask%20a%20Librarian";
+        var width = 300;
+        var height = 400;
+        var left = 0;
+        var top = 0;
+        var params = 'width=' + width + ', height=' + height;
+        params += ', top=' + top + ', left=' + left;
+        params += ', directories=no';
+        params += ', location=no';
+        params += ', menubar=no';
+        params += ', resizable=no';
+        params += ', scrollbars=yes';
+        params += ', status=no';
+        params += ', toolbar=no';
+
+        window.open(url, 'AskWindow', params);
+    }
+</script>
+
+
+
+
+<div class="ask-librarian">
+	<div class="skinsstructure1 skin-simple-transparent-tan">
+		<div class="media-body">
+			<h3 class="media-heading">Ask a Librarian</h3>
+			<div id="online" style="display: none;">
+				<a href="#" class="cta-type4 cta-lib-green askChatLink">Chat Now!</a> 
+				<p class="nopadding-top nomargin-all">Or contact us by:</p>
+			</div>
+			<div class="cta-row size1of1 centering-content">
+				<a target="_blank" href="http://library.depaul.edu/about/contact-us/Pages/default.aspx" class="cta-type5 cta-lib-gray">Phone</a> 
+				<a href="sms:7735702275" class="phone cta-type5 cta-lib-gray">Text</a> 
+				<a target="_blank" href="/get-help/ask-a-librarian/Pages/default.aspx" class="hide-phone cta-type5 cta-lib-gray">Text</a> 
+				<a target="_blank" href="/get-help/ask-a-librarian/Pages/Email-a-Librarian.aspx" class="cta-type5 cta-lib-gray">Email</a> 
+			</div>
+            <div class="clear-both"> 
+            </div>
+            <div class="centering-content medium margin1em-bottom">
+                <a target="_blank" href="http://library.depaul.edu/get-help/ask-a-librarian/Pages/Make-an-Appointment.aspx">Make Appointment</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Alerts for system down time and emergencies -->
+
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+
+<hr/>
+
+<div class="media skinsstructure1 skin-simple-gray">
+
+	<div class="media-body panel-obj">
+		<h3 class="media-heading">System Downtime</h3>
+			<p class="alert-warning">The Library is updating its room reservation and research consultation software, Wednesday, Dec. 9th. These services will be offline during this period.</p>
+		
+	</div>
+</div>
 -->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
