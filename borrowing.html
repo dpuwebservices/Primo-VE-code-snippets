@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<style>
+  table td{border: 1px solid gray;}
+  tbody tr:nth-child(odd){background: #e6e9ec;}
+</style>
+</head>
+
+<body>
+
+<h1>DePaul Students</h1>
+<p>All DePaul students must be currently enrolled for classes to maintain the library privileges including Inter-Library Loan.</p>
+<p>View borrowing privileges for: </p>
+
+<ul>
+<li id="btn-undergrad">Undergraduate students</li>
+<li id="btn-grad">Graduate students</li>
+<li id="btn-law">Law students</li>
+</ul>
+
+<div id="undergrad">
+  <h2>Undergraduate Borrowing Privileges</h2>
+<table>
+<tbody>
+<tr>
+<td>Access to Richardson Library</td>
+<td>yes</td>
+<td>Access to the physical space for visitors to Richardson Library</td>
+</tr>
+<tr>
+<td>Books (Circulating Only) - Includes ERC/CMC and Music Scores</td>
+<td>yes</td>
+<td>4 weeks</td>
+</tr>
+<tr>
+<td>Identification Needed</td>
+<td>yes</td>
+<td>DePaul ID required</td>
+</tr>
+<tr>
+<td>Interlibrary loan</td>
+<td>yes</td>
+<td>Request beyond DePaul and I-Share using <a href="https://depaullib.illiad.oclc.org/illiad/logon.html">ILLiad</a></td>
+</tr>
+<tr>
+<td>Library lab use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Library research computer use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Media viewing &amp; listening area use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Microfilm &amp; microfiche use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Online renewal</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Phone renewal</td>
+<td>yes</td>
+<td>(312) 362-8433</td>
+</tr>
+<tr>
+<td>Reference service use</td>
+<td>yes</td>
+<td><a href="/get-help/ask-a-librarian/Pages/default.aspx">Ask a Librarian</a></td>
+</tr>
+<tr>
+<td>Remote access to online resources</td>
+<td>yes</td>
+<td>via Libraries' proxy server</td>
+</tr>
+<tr>
+<td>Request books from another DePaul campus library</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Request books from I-Share Libraries</td>
+<td>yes</td>
+<td>Request books from I-Share through the <a href="https://vufind.carli.illinois.edu/all/vf/">I-Share catalog</a>; 28 day loan, max 3 renewals</td>
+</tr>
+<tr>
+<td>Research consultation services</td>
+<td>yes</td>
+<td><a href="/get-help/ask-a-librarian/Pages/default.aspx">Reference Service Use</a></td>
+</tr>
+<tr>
+<td>Video &amp; CD checkout</td>
+<td>yes</td>
+<td>4 items for 7 days</td>
+</tr>
+<tr>
+<td>Wireless access</td>
+<td>yes</td>
+<td>Wireless access via <a href="https://offices.depaul.edu/information-services/services/wireless/Pages/default.aspx">DPU Wireless network</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="grad">
+  <h2>Graduate Borrowing Privileges</h2>  
+<table>
+<tbody>
+<tr>
+<td>Access to Richardson Library</td>
+<td>Yes</td>
+<td>Access to the physical space for visitors to Richardson Library</td>
+</tr>
+<tr>
+<td>Book checkout</td>
+<td>yes</td>
+<td>8 weeks</td>
+</tr>
+<tr>
+<td>Identification needed</td>
+<td>yes</td>
+<td>DePaul ID required</td>
+</tr>
+<tr>
+<td>Interlibrary loan</td>
+<td>yes</td>
+<td>Request beyond DePaul and I-Share using <a href="https://depaullib.illiad.oclc.org/illiad/logon.html">ILLiad</a></td>
+</tr>
+<tr>
+<td>Library lab use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Library research computer use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Media viewing &amp; listening area use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Microfilm &amp; microfiche use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Online renewal</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Phone renewal</td>
+<td>yes</td>
+<td>(312) 362-8433</td>
+</tr>
+<tr>
+<td>Reference service use</td>
+<td>yes</td>
+<td><a href="/get-help/ask-a-librarian/Pages/default.aspx">Ask a Librarian</a></td>
+</tr>
+<tr>
+<td>Remote access to online resources</td>
+<td>yes</td>
+<td>via Libraries' proxy server</td>
+</tr>
+<tr>
+<td>Request articles from another DePaul campus library</td>
+<td>yes</td>
+<td>Request articles from another DePaul campus library through <a href="https://depaullib.illiad.oclc.org/illiad/logon.html">ILLiad</a></td>
+</tr>
+<tr>
+<td>Request books from another DePaul campus library</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Request books from I-Share Libraries</td>
+<td>yes</td>
+<td>Request books from I-Share libraries through the <a href="https://vufind.carli.illinois.edu/all/vf/">I-Share catalog</a>; 28 day loan, max 3 renewals</td>
+</tr>
+<tr>
+<td>Research consultation services</td>
+<td>yes</td>
+<td><a href="/get-help/ask-a-librarian/Pages/default.aspx">Reference Service Use</a></td>
+</tr>
+<tr>
+<td>Video &amp; CD checkout</td>
+<td>yes</td>
+<td>4 items for 7 days</td>
+</tr>
+<tr>
+<td>Wireless access</td>
+<td>yes</td>
+<td>Wireless access via <a href="https://offices.depaul.edu/information-services/services/wireless/Pages/default.aspx">DPU Wireless network</a></td>
+</tr>
+</tbody>
+</table>
+  
+</div>
+
+<div id="law">
+    <h2>Law Borrowing Privileges</h2>
+<table>
+<tbody>
+<tr>
+<td>Access to Richardson Library</td>
+<td>Yes</td>
+<td>Access to the physical space for visitors to Richardson Library</td>
+</tr>
+<tr>
+<td>Book checkout</td>
+<td>yes</td>
+<td>8 weeks</td>
+</tr>
+<tr>
+<td>Identification needed</td>
+<td>yes</td>
+<td>DePaul ID required</td>
+</tr>
+<tr>
+<td>Interlibrary loan</td>
+<td>yes</td>
+<td>Request beyond DePaul and I-Share using <a href="https://depaullib.illiad.oclc.org/illiad/logon.html">ILLiad</a></td>
+</tr>
+<tr>
+<td>Library lab use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Library research computer use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Media viewing &amp; listening area use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Microfilm &amp; microfiche use</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Online renewal</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Phone renewal</td>
+<td>yes</td>
+<td>(312) 362-8121</td>
+</tr>
+<tr>
+<td>Reference service use</td>
+<td>yes</td>
+<td><a href="http://law.depaul.edu/library/services/Pages/online-reference.aspx">Ask for Research Help</a></td>
+</tr>
+<tr>
+<td>Remote access to online resources</td>
+<td>yes</td>
+<td>via Libraries' proxy server</td>
+</tr>
+<tr>
+<td>Request articles from another DePaul campus library</td>
+<td>yes</td>
+<td>Request articles from another DePaul campus library through <a href="https://depaullib.illiad.oclc.org/illiad/logon.html">ILLiad</a></td>
+</tr>
+<tr>
+<td>Request books from another DePaul campus library</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Request books from I-Share Libraries</td>
+<td>yes</td>
+<td>Request books from I-Share libraries through the <a href="https://vufind.carli.illinois.edu/all/vf/">I-Share catalog</a>; 28 day loan, max 3 renewals</td>
+</tr>
+<tr>
+<td>Research consultation services</td>
+<td>yes</td>
+<td><a href="/get-help/ask-a-librarian/Pages/default.aspx">Reference Service Use</a></td>
+</tr>
+<tr>
+<td>Video &amp; CD checkout</td>
+<td>yes</td>
+<td>4 items for 7 days</td>
+</tr>
+<tr>
+<td>Wireless access</td>
+<td>yes</td>
+<td>Wireless access via <a href="https://offices.depaul.edu/information-services/services/wireless/Pages/default.aspx">DPU Wireless network</a></td>
+</tr>
+</tbody>
+</table>
+  
+</div>
+</body>
+</html>
