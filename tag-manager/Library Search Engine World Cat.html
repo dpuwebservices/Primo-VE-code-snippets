@@ -1,3 +1,11 @@
+<style>
+  p.notice{
+    margin:0;
+    padding:4px 0; 
+    border-top: 1px solid #B0AEAE;
+    border-bottom: 1px solid #B0AEAE;"    
+  }  
+</style>
 <script>
    function submitWC() {
    
@@ -59,10 +67,7 @@
                <div class="block" id="wcl_searchbox">
                   <div class="block">
                      <span>
-                         <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text" id="q" 
-                            onkeypress="if(event.keyCode===13)submitWC();" 
-                            onfocus="clearWCSearch();" 
-                            onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/> 
+                         <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text" id="q" onkeypress="if(event.keyCode===13)submitWC();" onfocus="clearWCSearch();" onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/> 
                      </span>
                      <span class="hpadding">
 					 <label class="offscreen" for="scope">Select Scope</label>
@@ -104,9 +109,10 @@
                                    <a onclick="setWCSearch();" target="_parent" title="DePaul VuFind Catalog" href="http://vufind.carli.illinois.edu/vf-dpu/" class="ms-rteFontSize-3">
                                        <strong>DePaul VuFind Catalog</strong>
                                    </a>
-<!--                                   Uncomment line below to display a message-->
-<!--<p style="margin:0;padding:4px 0; border-top: 1px solid #B0AEAE;border-bottom: 1px solid #B0AEAE;"> Upcoming construction will cause items from the 2nd floor to become unavailable for the summer. If you request items <strong>by June 8th</strong>, you will not need to return them until September. <strong><a href="https://news.library.depaul.press/full-text/2017/05/08/summer-reading-or-research-plan-ahead-for-collection-access/">Learn more</a></strong>. </p>  -->
-                           </div>
+<!--Uncomment line below to display a message
+<p class="notice"></p>
+ -->
+                           </span></div>
                         </span>
                      </div>
                   </div>
