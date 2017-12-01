@@ -1,44 +1,5 @@
-<script type="text/javascript" src="https://libraryh3lp.com/presence/jid/dpulibrarian/chat.libraryh3lp.com/js"></script>
+<script type="text/javascript" src="https://v2.libanswers.com/load_chat.php?hash=7b2a902a956b36f5f1006242c263e993"></script>
 
-<script>
-
-$(document).ready(function () {
-        show_presence();
-$('a.askChatLink').click(function(e) {
-e.preventDefault();
-askChat();
-});
-});
-
-function show_presence() {
-        for (var i = 0; i < jabber_resources.length; ++i) {
-         var resource = jabber_resources[i];
-          if (resource.show === "available" || resource.show === "chat") {
-               document.getElementById('online').style.display = '';
-          }
-        }
-      }
-
-
-function askChat() {
-        var url = "//libraryh3lp.com/chat/dpulibrarian@chat.libraryh3lp.com?skin=22365&theme=flat-chat-bubbles&identity=dpulibrarian#&title=Ask%20a%20Librarian";
-        var width = 300;
-        var height = 400;
-        var left = 0;
-        var top = 0;
-        var params = 'width=' + width + ', height=' + height;
-        params += ', top=' + top + ', left=' + left;
-        params += ', directories=no';
-        params += ', location=no';
-        params += ', menubar=no';
-        params += ', resizable=no';
-        params += ', scrollbars=yes';
-        params += ', status=no';
-        params += ', toolbar=no';
-
-        window.open(url, 'AskWindow', params);
-    }
-</script>
 
 <style>
 .cta-lib-bluegray {
@@ -59,6 +20,11 @@ function askChat() {
     background: linear-gradient(to bottom,#f2f6f9 0%,#e6e9ec 100%);
     border: 1px solid #c1cccc;
     margin: 5px 4px 0 0;
+
+#libchat_7b2a902a956b36f5f1006242c263e993{margin:0 !important;}  
+#libchat_7b2a902a956b36f5f1006242c263e993 button{width:100%; padding:0 !important;} // padding is getting overwritten by springshare css. 
+#libchat_7b2a902a956b36f5f1006242c263e993 .libchat_offline{display:none;}
+        
 }
 </style>
 
@@ -67,11 +33,9 @@ function askChat() {
 	<div class="skinsstructure1 skin-simple-transparent-tan">
 		<div class="media-body">
 			<h3 class="media-heading">Ask a Librarian</h3>
-			<div id="online" style="display: none;">
-				<a href="#" class="cta-type4 cta-lib-green askChatLink">Chat Now!</a> 
-			</div>
-                        <a class="cta-lib-bluegray" target="_blank" href="http://library.depaul.edu/get-help/ask-a-librarian/Pages/Make-an-Appointment.aspx">Make an Appointment</a>                        
-                        <p class="nopadding-top nomargin-all">Or contact us by:</p>
+      <div class="cta-type4 cta-lib-green askChatLink" id="libchat_7b2a902a956b36f5f1006242c263e993"></div>
+      <a class="cta-lib-bluegray" target="_blank" href="http://library.depaul.edu/get-help/ask-a-librarian/Pages/Make-an-Appointment.aspx">Make an Appointment</a>                        
+      <p class="nopadding-top nomargin-all">Or contact us by:</p>
 			<div class="cta-row size1of1 centering-content">
 				<a target="_blank" href="http://library.depaul.edu/about/contact-us/Pages/default.aspx" class="cta-type5 cta-lib-gray">Phone</a> 
 				<a href="sms:7735702275" class="phone cta-type5 cta-lib-gray">Text</a> 
