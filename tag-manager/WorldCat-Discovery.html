@@ -26,7 +26,7 @@
 var worldcat = 'https://depaul.worldcat.org/search?qt=affiliate&ai=wclocal_813&q=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
          window.open(worldcat);    
 
-     
+   
    }
    
    function changeWCSearch() {
@@ -87,7 +87,7 @@ var worldcat = 'https://depaul.worldcat.org/search?qt=affiliate&ai=wclocal_813&q
                          <input id="wcl_search_button" onclick="submitWC(); return false;" value="Search" type="submit"/> </span> 
                      <div class="hpadding">
 						<label class="offscreen" for="format">Search Articles Only</label>
-                        <input name="format" value="x0:artchap" type="checkbox"/> 
+                        <input name="format" value="" type="checkbox"/> 
                         <span class="medium padding05em-left">
                            Search articles only
                            <div class="vpadding block right" id="advanced">
