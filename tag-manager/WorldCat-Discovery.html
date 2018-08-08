@@ -9,10 +9,10 @@
 <script>
    function submitWC() {
    
-           var formatVal = "format=all";
-             if (document.getElementsByName('format')[0].checked)
-                   formatVal="format=Artchap&subformat=Artchap%3A%3Aartchap_artcl";
-   
+           var formatVal = "all";
+             if (document.getElementsByName('format')[0].checked){
+                   formatVal="Artchap&subformat=Artchap%3A%3Aartchap_artcl";
+                 }      
 //       Mobile site no longer working
 //     
 //      if (document.documentElement.clientWidth < 480) {
