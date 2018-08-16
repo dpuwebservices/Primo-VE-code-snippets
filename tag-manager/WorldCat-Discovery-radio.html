@@ -10,9 +10,12 @@
    function submitWC() {
    
            var formatVal = "all";
-             if (document.getElementsByName('format')[0].checked){
+             if (document.getElementsByName('formatArticles')[0].checked){
                    formatVal="Artchap&format=Jrnl&format=News";
-                 }      
+                 }
+             else if (document.getElementsByName('formatBooks')[0].checked){
+                   formatVal="Book&format=Msscr&format=Audiobook";
+             }
 //       Mobile site no longer working
 //     
 //      if (document.documentElement.clientWidth < 480) {
@@ -86,8 +89,10 @@ var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.g
                      <span>
                          <input id="wcl_search_button" onclick="submitWC(); return false;" value="Search" type="submit"/> </span> 
                      <div class="hpadding">
-						<label class="offscreen" for="format">Search Articles Only</label>
-                        <input name="format" value="" type="radio"/> 
+						Search Only: <label class="offscreen" for="format">Articles</label>
+                        <input name="formatArticles" value="" type="radio"/> 
+                        <label class="offscreen" for="format">Books</label>
+                        <input name="formatBooks" value="" type="radio"/>                         
                         <span class="medium padding05em-left">
                            Search articles only
                            <div class="vpadding block right" id="advanced">
