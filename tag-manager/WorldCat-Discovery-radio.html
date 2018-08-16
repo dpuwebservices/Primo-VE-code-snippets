@@ -7,14 +7,19 @@
   }  
 </style>
 <script>
+  
+
    function submitWC() {
    
            var formatVal = "all";
-             if (document.getElementsByName('formatArticles')[0].checked){
+             if (document.getElementsByName('format')[0].checked){
                    formatVal="Artchap&format=Jrnl&format=News";
                  }
-             else if (document.getElementsByName('formatBooks')[0].checked){
-                   formatVal="Book&format=Msscr&format=Audiobook";
+             else if (document.getElementsByName('format')[1].checked){
+                formatVal="Book&format=Msscr&format=Audiobook";
+             }  
+             else if (document.getElementsByName('format')[2].checked){
+                formatVal="Music&format=Video&format=Msscr&format=Compfile&format=Snd&format=Image&format=Audiobook&format=Vis&format=Game&format=Intmm&format=Web&format=x0%3Amusic";
              }
 //       Mobile site no longer working
 //     
@@ -89,12 +94,12 @@ var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.g
                      <span>
                          <input id="wcl_search_button" onclick="submitWC(); return false;" value="Search" type="submit"/> </span> 
                      <div class="hpadding">
-						Search Only: <label class="offscreen" for="formatArticles">Articles</label>
-                        <input name="formatArticles" value="" type="radio"/> 
-                        <label class="offscreen" for="formatBooks">Books</label>
-                        <input name="formatBooks" value="" type="radio"/>                         
+						Search Only: <label>
+                      <input type="radio" name="format" value="articles" /> Articles</label>              
+                      <label><input type="radio" name="format" value="books" checked /> Books</label>
+                      <label><input type="radio" name="format" value="av" /> Audio/Visual</label>            
                         <span class="medium padding05em-left">
-                           Search articles only
+                          
                            <div class="vpadding block right" id="advanced">
                                <span class="left ms-rteFontSize-3">
                                    <a onclick="setWCSearch();" target="_parent" title="A to Z Databases" href="/find/Pages/Articles-A-Z-Databases-and-Journals.aspx">
@@ -123,10 +128,6 @@ var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.g
 <p class="notice"></p>
  -->
 
- 
-
-
-  
                            </span></div>
                         </span>
                      </div>
