@@ -9,42 +9,34 @@
 <script>
    function submitWC() {
    
-           var formatVal = "all";
-             if (document.getElementsByName('format')[0].checked){
-                   formatVal="Artchap&format=Jrnl&format=News";
-                 }      
+      var formatVal = "all";
+      if (document.getElementsByName('format')[0].checked){
+        formatVal="Artchap&format=Jrnl&format=News";
+      }      
       var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
-         window.open(worldcat);    
-   
-   
+      window.open(worldcat);    
    }
    
-   function changeWCSearch() {
-    if (document.getElementsByName('q')[0].value.trim()=="")
-    {
-     document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+    function changeWCSearch() {
+      if (document.getElementsByName('q')[0].value.trim()==""){
+        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+      }
     }
    
-   }
-   
-   function setWCSearch() {
-       document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
-   }
-   
-   function clearWCSearch() {
-    if (document.getElementsByName('q')[0].value=="Search books, articles, I-Share and more..." )
-   {
-     document.getElementsByName('q')[0].value="";
-   }
-   else
-   {
-    if (document.getElementsByName('q')[0].value=="")
-    {
-     document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+    function setWCSearch() {
+      document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
     }
-   }
    
-   }
+    function clearWCSearch() {
+      if (document.getElementsByName('q')[0].value=="Search books, articles, I-Share and more..." ){
+      document.getElementsByName('q')[0].value="";
+      }
+      else {
+        if (document.getElementsByName('q')[0].value==""){
+        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+        }
+      }
+    }
 </script>
 <!--Begin WorldCat Local Search Box-->
 <!-- <div style="background-color: rgb(255, 246, 143);"><span><span><span class="left"><strong>SUNDAY, OCTOBER 30: The &quot;Find Journals by Title&quot; page and &quot;Find Full-Text @ DePaul&quot; links to articles and journals are now working. The system is still having some issues, so page loading and connecting to full text articles and journals may be very slow for some items.<br/><span style="display: inline-block;"></span></strong></span></span></span></div> -->
@@ -104,7 +96,7 @@
                                  <a onclick="setWCSearch();" target="_parent" title="DePaul VuFind Catalog" href="https://vufind.carli.illinois.edu/vf-dpu/" class="ms-rteFontSize-3">
                                  <strong>DePaul VuFind Catalog</strong>
                                  </a>
-                                 <!--                                   Uncomment line below to display a message
+                                 <!--  Uncomment line below to display a message
                                     <p class="notice"></p>
                                      -->
                               </span>
