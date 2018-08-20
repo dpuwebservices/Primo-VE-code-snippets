@@ -13,17 +13,7 @@
              if (document.getElementsByName('format')[0].checked){
                    formatVal="Artchap&format=Jrnl&format=News";
                  }      
-//       Mobile site no longer working
-//     
-//      if (document.documentElement.clientWidth < 480) {
-//           var worldcat = 'https://depaul.worldcat.org/m/search?qt=affiliate&ai=wclocal_813&q=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
-//         window.open(worldcat); } 
-//        else {  
-//           var worldcat = 'https://depaul.worldcat.org/search?qt=affiliate&ai=wclocal_813&q=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
-//         window.open(worldcat); 
-//       }
-
-var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
+      var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
          window.open(worldcat);    
 
    
