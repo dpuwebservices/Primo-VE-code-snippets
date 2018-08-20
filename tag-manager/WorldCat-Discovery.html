@@ -12,8 +12,12 @@
       var formatVal = "all";
       if (document.getElementsByName('format')[0].checked){
         formatVal="Artchap&format=Jrnl&format=News";
-      }      
-      var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + document.getElementById('scope').value + "&format=" + formatVal;
+      }
+      var scope = ""; 
+      if (document.getElementById('scope').value != "999"){ // explicit fake value to indicate search all
+        scope=document.getElementById('scope').value;
+      }
+      var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + scope + "&format=" + formatVal;
       window.open(worldcat);    
    }
    
@@ -59,7 +63,7 @@
                      <span class="hpadding">
                         <label class="offscreen" for="scope">Select Scope</label>
                         <select name="scope" id="scope">
-                           <option value="" selected>Libraries Worldwide</option>
+                           <option value="999" selected>Libraries Worldwide</option> <!-- Need a fake value here because null gets stripped out -->
                            <option value="sz:30986">I-Share Libraries</option>
                            <option value="sz:33458">DePaul University</option>
                         </select>
