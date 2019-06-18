@@ -1,11 +1,12 @@
+
 <style>
   /* hours row does not have top border of main hours tag*/
-  .hours-row {
+  .hours-today {
   font-size:smaller;}
   
   .hours-col-time {padding-left: 5px;}
   
-  .hours-today th {display:none;}
+
   
 </style>
 
@@ -25,16 +26,21 @@
       </div>
       <div style="clear: both;"></div>
     </li>
+    
   </ul>
 </div>
 
 
-     
-
-
 <script src="https://api3.libcal.com/api_hours_today.php?iid=123&amp;lid=2437&amp;format=js&amp;context=object"> </script>
 
-<!-- jQuery script removes visibility of all table rows that do not contain target department in CONTAINS filter -->
+<!--  -->
 <script>
-$('tr.hours-row:not(:contains("Special Collections & Archives"))').css('display', 'none');       
-</script> 
+$('tr.hours-today-row:not(:contains("Special Collections & Archives"))').css('display', 'none');       
+$('th.hours-col-loc').html('SPCA hours:');
+  $(".hours-today tbody").append(
+      "<tr>" +
+        "<th></th>" +
+        "<td><a href=\"https://libcal.depaul.edu/hours\">more hours</a></td>" +
+      "</tr>"
+  );
+</script>
