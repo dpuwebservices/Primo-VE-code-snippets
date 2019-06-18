@@ -1,0 +1,40 @@
+<style>
+  /* hours row does not have top border of main hours tag*/
+  .hours-row {
+  font-size:smaller;}
+  
+  .hours-col-time {padding-left: 5px;}
+  
+  .hours-today th {display:none;}
+  
+</style>
+
+
+<div class="library-hours-list">
+  <ul class="nopadding-left library-hours-list">
+    <h3 class="nomargin-bottom library-hours-h3">
+      <span id="datePickerWP">Today&#39;s Hours</span>
+     
+    </h3>
+    <li>
+      <div class="unit size3of5">
+        <!-- no header with dept name required -->
+      </div>
+      <div class="unit size2of5">
+        <div id="api_hours_today_iid123_lid2437"></div>
+      </div>
+      <div style="clear: both;"></div>
+    </li>
+  </ul>
+</div>
+
+
+     
+
+
+<script src="https://api3.libcal.com/api_hours_today.php?iid=123&amp;lid=2437&amp;format=js&amp;context=object"> </script>
+
+<!-- jQuery script removes visibility of all table rows that do not contain target department in CONTAINS filter -->
+<script>
+$('tr.hours-row:not(:contains("Special Collections & Archives"))').css('display', 'none');       
+</script> 
