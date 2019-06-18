@@ -37,10 +37,5 @@
 <script>
 $('tr.hours-today-row:not(:contains("Special Collections & Archives"))').css('display', 'none');       
 $('th.hours-col-loc').html('SPCA hours:');
-  $(".hours-today tbody").append(
-      "<tr>" +
-        "<th></th>" +
-        "<td><a href=\"https://libcal.depaul.edu/hours\">more hours</a></td>" +
-      "</tr>"
-  );
+  $(".hours-today tr").append("<td>&nbsp;</td><td><a href=\"https://libcal.depaul.edu/hours\">(view more)</a></td>");
 </script>
