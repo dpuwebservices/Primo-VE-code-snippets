@@ -12,10 +12,10 @@
     
     
       // Adds the chat button
-//      (function() {
-//          var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = 'true';
-//          lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'v2.libanswers.com/load_chat.php?hash=5b6ccf0890ace526e5703d7f2baf7e4f';
-//          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-//      })();    
+      (function() {
+          var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = 'true';
+          lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'v2.libanswers.com/load_chat.php?hash=5b6ccf0890ace526e5703d7f2baf7e4f';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+      })();    
 
 })();
