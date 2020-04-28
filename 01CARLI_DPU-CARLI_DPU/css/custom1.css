@@ -14,21 +14,21 @@ prm-search > md-content.md-primoExplore-theme .main {
 
 */
 /* line 21, ../../scss/custom1.scss */
-#lcs_slide_out-15960 {
-  margin-top: 300px;
+.libchat-widget {
+  top: 50% !important;
 }
 
 /* Show Main Menu links on Services Page */
-/* line 26, ../../scss/custom1.scss */
+/* line 28, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
 
-/* line 29, ../../scss/custom1.scss */
+/* line 31, ../../scss/custom1.scss */
 .default-card + .highlight {
   background: yellow;
 }
-/* line 31, ../../scss/custom1.scss */
+/* line 33, ../../scss/custom1.scss */
 .default-card + .highlight p {
   color: red;
 }
