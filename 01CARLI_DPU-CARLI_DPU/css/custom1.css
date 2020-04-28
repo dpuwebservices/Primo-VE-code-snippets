@@ -18,8 +18,13 @@ prm-search > md-content.md-primoExplore-theme .main {
   top: 50% !important;
 }
 
+/* line 26, ../../scss/custom1.scss */
+md-card-content img {
+  max-width: 100%;
+}
+
 /* Show Main Menu links on Services Page */
-/* line 28, ../../scss/custom1.scss */
+/* line 30, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
