@@ -13,23 +13,23 @@ prm-search > md-content.md-primoExplore-theme .main {
 }
 
 */
-/* line 21, ../../scss/custom1.scss */
+/* line 20, ../../scss/custom1.scss */
 .lcs_slide_out, .lcs_slide_out-r {
   top: 50% !important;
 }
 
-/* line 26, ../../scss/custom1.scss */
+/* line 25, ../../scss/custom1.scss */
 md-card-content img {
   max-width: 100%;
 }
 
-/* line 29, ../../scss/custom1.scss */
+/* line 28, ../../scss/custom1.scss */
 md-card.highlight {
   background: white;
 }
 
 /* Show Main Menu links on Services Page */
-/* line 34, ../../scss/custom1.scss */
+/* line 33, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
