@@ -18,15 +18,15 @@ prm-search > md-content.md-primoExplore-theme .main {
 
 // Need to specific ID# for specific chat instance in SpringShare, or !important
 // Doesn't work for mobile. Investigate
-.libchat-widget{
-  top: 50% !important;
+.lcs_slide_out, .lcs_slide_out-r{
+  top:50% !important;
 }
 
 md-card-content{
   img {max-width: 100%;}
 }
 
-.highlight{
+md-card.highlight{
   background:white;
 }
 

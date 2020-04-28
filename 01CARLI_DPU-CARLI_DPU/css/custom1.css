@@ -14,7 +14,7 @@ prm-search > md-content.md-primoExplore-theme .main {
 
 */
 /* line 21, ../../scss/custom1.scss */
-.libchat-widget {
+.lcs_slide_out, .lcs_slide_out-r {
   top: 50% !important;
 }
 
@@ -24,7 +24,7 @@ md-card-content img {
 }
 
 /* line 29, ../../scss/custom1.scss */
-.highlight {
+md-card.highlight {
   background: white;
 }
 
