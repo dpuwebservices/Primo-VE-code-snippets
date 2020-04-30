@@ -16,6 +16,11 @@ prm-search > md-content.md-primoExplore-theme .main {
 
 */
 
+//// Colors
+$sharePointBlue:#073155;
+$topBar: $sharepointBlue;
+$mainNav: darken($sharepointBlue, 40%);
+
 // Need to specific ID# for specific chat instance in SpringShare, or !important
 .lcs_slide_out, .lcs_slide_out-r{
   top:50% !important;
@@ -48,11 +53,12 @@ md-card.highlight{
 
 //top bar
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond {
-  background:#0D5EB8; // match library banner
+  background:$topBar; // match library banner
 }
 
+// main navigation
 .prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
-  background:#073155;
+  background:$mainNav;
 }
 
 
