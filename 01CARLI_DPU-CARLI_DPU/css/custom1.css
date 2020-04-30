@@ -56,8 +56,18 @@ md-card.highlight {
   padding: 4%;
 }
 
-/* Show Main Menu links on Services Page */
 /* line 50, ../../scss/custom1.scss */
+.prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond {
+  background: #0D5EB8;
+}
+
+/* line 54, ../../scss/custom1.scss */
+.prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
+  background: #073155;
+}
+
+/* Show Main Menu links on Services Page */
+/* line 60, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
