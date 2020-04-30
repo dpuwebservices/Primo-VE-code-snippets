@@ -29,6 +29,7 @@ $topBar: $darkerSharepoint;
 
 md-card-content{
   img {max-width: 100%;}
+  a {color:$darkerSharepoint; font-weight:bold;}
 }
 
 md-card.highlight{
@@ -47,11 +48,11 @@ md-card.highlight{
 }
 
 .available-online-filter{
-  img{max-width: 30%;float:left; border: 2px solid $darkerSharepoint;}
+  img{max-width: 30%;float:left; border: 1px solid $darkerSharepoint;}
   p{max-width:66%; float:right; color:black; padding:4%;}
 }
 
-
+//Overwrite default colors
 
 .prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
   background:$topBar;
@@ -61,6 +62,9 @@ md-card.highlight{
   background:$mainNav; // match library banner
 }
 
+.duedate>span, .ext_not_restricted>span, .fulltext>span, .fulltext_linktorsrc>span, .fulltext_linktorsrc_newspaper>span, .fulltext_linktorsrc_topic>span, .fulltext_newspaper>span, .fulltext_topic>span, .getit>span, .login-dialog .collapsable-container md-list md-list-item .md-list-item-inner, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item .md-list-item-text h3, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list[class$=-line] md-list-item>.md-no-style .md-list-item-text h3, .login-dialog .md-list md-list-item .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item .md-list-item-text h3, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog .md-list md-list-item>.md-no-style .md-list-item-text h3, .login-dialog md-list md-list-item .md-list-item-text .list-item-title, .login-dialog md-list md-list-item .md-list-item-text h3, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text .list-item-title, .login-dialog md-list md-list-item>.md-no-style .md-list-item-text h3, .md-button.arrow-link-button .button-content, .md-button.arrow-link-button [link-arrow], .md-button.arrow-link-button prm-usage-metrics div[id^=_altmetric_popover_el].altmetric-embed div#_altmetric_container.altmetric_container .link-to-altmetric-details-tab.button-content, .not_restricted>span, .prm-links, .restricted>span, .separate-list-items md-list-item .item-loader-with-text .md-button, .tiles-grid-tile .tile-header .header-link .arrow-icon, .tiles-grid-tile .tile-header .header-link:focus, .tiles-grid-tile .tile-header .header-link:hover, .tiles-grid-tile .tile-header .md-button, .worldcat>span, [class*=_more]>span, [class*=_unknown]>span, [class*=available]>span, [class*=check_]>span, [class*=does_not_exist]>span, [class*=FT]>span, [class*=may_]>span, [class*=NFT]>span, [class*=no_]>span, [class*=unavailable]>span, a, md-grid-tile .tile-header .header-link .arrow-icon, md-grid-tile .tile-header .header-link:focus, md-grid-tile .tile-header .header-link:hover, md-grid-tile .tile-header .md-button, md-input-container.has-fixed-message [ng-message] a, md-list-item.list-item-as-link, md-tabs.tabs-as-app .back-button, md-tabs.tabs-as-links md-tab-item, md-tabs.tabs-as-links md-tab-item:not([disabled]), prm-tags-list .md-chips .md-chip .md-chip-content strong, prm-tags-list .md-chips md-chip .md-chip-content strong, prm-tags-list md-chips .md-chip .md-chip-content strong, prm-tags-list md-chips md-chip .md-chip-content strong, prm-usage-metrics div[id^=_altmetric_popover_el].altmetric-embed div#_altmetric_container.altmetric_container .md-button.arrow-link-button .link-to-altmetric-details-tab.button-content, prm-usage-metrics div[id^=_altmetric_popover_el].altmetric-embed div#_altmetric_container.altmetric_container a.link-to-altmetric-details-tab {
+  
+}
 
 /* Show Main Menu links on Services Page */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {display: inline;}

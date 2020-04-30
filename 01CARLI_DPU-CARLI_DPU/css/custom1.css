@@ -22,34 +22,39 @@ prm-search > md-content.md-primoExplore-theme .main {
 md-card-content img {
   max-width: 100%;
 }
+/* line 32, ../../scss/custom1.scss */
+md-card-content a {
+  color: #062d59;
+  font-weight: bold;
+}
 
-/* line 34, ../../scss/custom1.scss */
+/* line 35, ../../scss/custom1.scss */
 md-card.highlight {
   background: white;
 }
 
-/* line 37, ../../scss/custom1.scss */
+/* line 38, ../../scss/custom1.scss */
 .search-scope-text {
   font-family: "Arial", "Helvetica", sans-serif;
 }
-/* line 39, ../../scss/custom1.scss */
+/* line 40, ../../scss/custom1.scss */
 .search-scope-text h3 {
   font-size: 18px;
   font-style: italic;
   font-weight: bold;
 }
-/* line 44, ../../scss/custom1.scss */
+/* line 45, ../../scss/custom1.scss */
 .search-scope-text p {
   margin: 0 0 20px 0;
 }
 
-/* line 50, ../../scss/custom1.scss */
+/* line 51, ../../scss/custom1.scss */
 .available-online-filter img {
   max-width: 30%;
   float: left;
-  border: 2px solid #062d59;
+  border: 1px solid #062d59;
 }
-/* line 51, ../../scss/custom1.scss */
+/* line 52, ../../scss/custom1.scss */
 .available-online-filter p {
   max-width: 66%;
   float: right;
@@ -57,18 +62,18 @@ md-card.highlight {
   padding: 4%;
 }
 
-/* line 56, ../../scss/custom1.scss */
+/* line 57, ../../scss/custom1.scss */
 .prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
   background: #062d59;
 }
 
-/* line 60, ../../scss/custom1.scss */
+/* line 61, ../../scss/custom1.scss */
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond {
   background: #0D5EB8;
 }
 
 /* Show Main Menu links on Services Page */
-/* line 66, ../../scss/custom1.scss */
+/* line 70, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
