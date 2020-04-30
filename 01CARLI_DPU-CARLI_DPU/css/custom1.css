@@ -48,32 +48,37 @@ md-card.highlight {
   margin: 0 0 20px 0;
 }
 
-/* line 51, ../../scss/custom1.scss */
-.available-online-filter img {
-  max-width: 30%;
-  float: left;
-  border: 1px solid #062d59;
+@media only screen and (min-width: 1200px) {
+  /* line 53, ../../scss/custom1.scss */
+  .available-online-filter img {
+    max-width: 30%;
+    float: left;
+    border: 1px solid #062d59;
+  }
+  /* line 54, ../../scss/custom1.scss */
+  .available-online-filter p {
+    max-width: 66%;
+    float: right;
+    padding: 4% 0;
+  }
 }
-/* line 52, ../../scss/custom1.scss */
+/* line 56, ../../scss/custom1.scss */
 .available-online-filter p {
-  max-width: 66%;
-  float: right;
   color: black;
-  padding: 4% 0;
 }
 
-/* line 57, ../../scss/custom1.scss */
+/* line 61, ../../scss/custom1.scss */
 .prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
   background: #062d59;
 }
 
-/* line 61, ../../scss/custom1.scss */
+/* line 65, ../../scss/custom1.scss */
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond {
   background: #0D5EB8;
 }
 
 /* Show Main Menu links on Services Page */
-/* line 70, ../../scss/custom1.scss */
+/* line 74, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }

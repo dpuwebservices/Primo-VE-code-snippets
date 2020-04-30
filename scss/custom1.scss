@@ -47,9 +47,13 @@ md-card.highlight{
   }
 }
 
+
 .available-online-filter{
-  img{max-width: 30%;float:left; border: 1px solid $darkerSharepoint;}
-  p{max-width:66%; float:right; color:black; padding:4% 0;}
+  @media only screen and (min-width: 1200px){
+    img{max-width: 30%;float:left; border: 1px solid $darkerSharepoint;}
+    p{max-width:66%; float:right; padding:4% 0;}
+  }
+  p {color:black;}
 }
 
 //Overwrite default colors
