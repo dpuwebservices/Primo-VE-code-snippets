@@ -35,6 +35,14 @@ md-card.highlight{
     font-style: italic;
     font-weight:bold;
   }
+  p{
+    margin: 0 0 15px 0;
+  }
+}
+
+.available-online-filter{
+  img{max-width: 30%;float:left}
+  p{max-width:66%; float:right; color:black; padding:4%;}
 }
 
 
