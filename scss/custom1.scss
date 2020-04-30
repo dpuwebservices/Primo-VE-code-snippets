@@ -18,8 +18,9 @@ prm-search > md-content.md-primoExplore-theme .main {
 
 //// Colors
 $sharePointBlue:#0D5EB8;
+$darkerSharepoint: darken($sharePointBlue, 20%);
 $mainNav: $sharePointBlue;
-$topBar: darken($sharePointBlue, 20%);
+$topBar: $darkerSharepoint;
 
 // Need to specific ID# for specific chat instance in SpringShare, or !important
 .lcs_slide_out, .lcs_slide_out-r{
@@ -46,7 +47,7 @@ md-card.highlight{
 }
 
 .available-online-filter{
-  img{max-width: 30%;float:left}
+  img{max-width: 30%;float:left; border: 2px solid $darkerSharepoint;}
   p{max-width:66%; float:right; color:black; padding:4%;}
 }
 

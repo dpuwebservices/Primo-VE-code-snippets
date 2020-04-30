@@ -13,42 +13,43 @@ prm-search > md-content.md-primoExplore-theme .main {
 }
 
 */
-/* line 25, ../../scss/custom1.scss */
+/* line 26, ../../scss/custom1.scss */
 .lcs_slide_out, .lcs_slide_out-r {
   top: 50% !important;
 }
 
-/* line 30, ../../scss/custom1.scss */
+/* line 31, ../../scss/custom1.scss */
 md-card-content img {
   max-width: 100%;
 }
 
-/* line 33, ../../scss/custom1.scss */
+/* line 34, ../../scss/custom1.scss */
 md-card.highlight {
   background: white;
 }
 
-/* line 36, ../../scss/custom1.scss */
+/* line 37, ../../scss/custom1.scss */
 .search-scope-text {
   font-family: "Arial", "Helvetica", sans-serif;
 }
-/* line 38, ../../scss/custom1.scss */
+/* line 39, ../../scss/custom1.scss */
 .search-scope-text h3 {
   font-size: 18px;
   font-style: italic;
   font-weight: bold;
 }
-/* line 43, ../../scss/custom1.scss */
+/* line 44, ../../scss/custom1.scss */
 .search-scope-text p {
   margin: 0 0 20px 0;
 }
 
-/* line 49, ../../scss/custom1.scss */
+/* line 50, ../../scss/custom1.scss */
 .available-online-filter img {
   max-width: 30%;
   float: left;
+  border: 2px solid #062d59;
 }
-/* line 50, ../../scss/custom1.scss */
+/* line 51, ../../scss/custom1.scss */
 .available-online-filter p {
   max-width: 66%;
   float: right;
@@ -56,18 +57,18 @@ md-card.highlight {
   padding: 4%;
 }
 
-/* line 55, ../../scss/custom1.scss */
+/* line 56, ../../scss/custom1.scss */
 .prm-primary-bg.prm-hue1, prm-atoz-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-collection-gallery-header .prm-hue1.collection-header-inner, prm-newspapers-search-bar.prm-hue1, prm-search-bar.prm-hue1, prm-spinner.prm-hue1.overlay-cover.light-on-dark:after, prm-tags-search-bar.prm-hue1, prm-topbar .top-nav-bar, prm-tree-nav prm-spinner .prm-hue1.diamond {
   background: #062d59;
 }
 
-/* line 59, ../../scss/custom1.scss */
+/* line 60, ../../scss/custom1.scss */
 .prm-primary-bg, prm-atoz-search-bar, prm-browse-search-bar, prm-collection-gallery-header .collection-header-inner, prm-newspapers-search-bar, prm-search-bar, prm-spinner.overlay-cover.light-on-dark:after, prm-tags-search-bar, prm-tree-nav prm-spinner .diamond {
   background: #0D5EB8;
 }
 
 /* Show Main Menu links on Services Page */
-/* line 65, ../../scss/custom1.scss */
+/* line 66, ../../scss/custom1.scss */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
