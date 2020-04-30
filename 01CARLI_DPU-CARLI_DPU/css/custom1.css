@@ -59,7 +59,7 @@ md-card.highlight {
   max-width: 66%;
   float: right;
   color: black;
-  padding: 4%;
+  padding: 4% 0;
 }
 
 /* line 57, ../../scss/custom1.scss */
