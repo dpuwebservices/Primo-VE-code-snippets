@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Basic page</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -25,7 +25,7 @@ document.forms["searchForm"].submit();
 }
 </script>
 
-<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-pu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()" onkeypress="if(event.keyCode===13){searchPrimo(); return false;}">
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="Everything">
