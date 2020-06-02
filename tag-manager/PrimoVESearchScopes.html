@@ -45,6 +45,12 @@ function primoScopeSwitch(scope) {
         document.getElementById("primoScope").value = "NewDiscoveryNetwork";
         document.getElementById("primoQueryTemp").placeholder = "Books & more from I-Share Libraries";
         break;		
+        
+      case "Worldcat":
+        document.getElementById("primoTab").value = "WORLDCAT_API";
+        document.getElementById("primoScope").value = "WORLDCAT_API";
+        document.getElementById("primoQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
+        break;		
 		
         
     }
@@ -80,6 +86,7 @@ window.onload = function() {
 	<option value="Articles"><label>Articles & More at DePaul</label></option>
 	<option value="Library Catalog"><label>DePaul Library Catalog</label></option>
 	<option value="IShare"><label>All I-Share Libraries</label></option>
+	<option value="Worldcat"><label>Libraries Worldwide</label></option>
 	</select> 
 	
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
