@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-<title>Primo VE Basic search form</title>
+<title>Primo VE with Search Scopes</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -16,7 +16,7 @@
 
   <script xmlns:ouc="http://omniupdate.com/XSL/Variables" type="text/javascript">
 
-function searchPrimo() {
+function searchPrimoWithScopes() {
     document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
     document.forms["OnesearchForm"].submit();
 }
@@ -85,7 +85,7 @@ window.onload = function() {
                   
 
 
-<form id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimo()" target="_blank" enctype="application/x-www-form-urlencoded; charset=utf-8">
+<form id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimoWithScopes()" target="_blank" enctype="application/x-www-form-urlencoded; charset=utf-8">
    <div class="large-3 medium-12 small-12 columns">
       <!-- Select Statement with values from case  Fires onchange --> 
       <label for="scopeSelecter">I am searching for:</label>
@@ -122,7 +122,7 @@ window.onload = function() {
    </div>
    <div class="large-1 medium-6 small-6 columns left space-above">
       <!-- Search Button --> 
-      <input alt="Search" id="go" onclick="searchPrimo()" title="Search" type="button" value="Go" class="button small dark" style="margin-top:.25rem; padding: 0.75rem 1.75rem 0.75rem 1.75rem;">
+      <input alt="Search" id="go" onclick="searchPrimoWithScopes()" title="Search" type="button" value="Go" class="button small dark" style="margin-top:.25rem; padding: 0.75rem 1.75rem 0.75rem 1.75rem;">
    </div>
    <div class="large-2 medium-6 small-6 columns left text-centered space-above">
       <a target="_blank" href="https://suny-bro.primo.exlibrisgroup.com/discovery/search?vid=01SUNY_BRO:01SUNY_BRO&amp;lang=en&amp;sortby=rank&amp;mode=advanced" class="button small dark" style="margin-top:.25rem; padding: 0.75rem 1.75rem 0.75rem 1.75rem;">Advanced</a>
