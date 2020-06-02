@@ -29,8 +29,8 @@ function primoScopeSwitch(scope) {
         break;
    
 		case "Library Catalog":
-        document.getElementById("primoTab").value = "ASC Library Holdings";
-        document.getElementById("primoScope").value = "MyInstitution";
+        document.getElementById("primoTab").value = "LibraryCatalog";
+        document.getElementById("primoScope").value = "LibraryCatalog";
         document.getElementById("primoQueryTemp").placeholder = "Print books,DVDs,and journals";
         break;
 		
@@ -70,8 +70,8 @@ window.onload = function() {
 	
 <!-- Select Statement with values from case  Fires onchange --> 
 	<select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" aria-label="search options">
-	<option value="Everything"><label>Almost Everything</label></option>
-	<option value="Library Catalog"><label>ASC Library Holdings</label></option>
+	<option value="Everything"><label>Everything at DePaul</label></option>
+	<option value="Library Catalog"><label>DePaul Library Catalog</label></option>
 	<option value="CentralIndex"><label>Articles</label></option>
 	</select> 
 	
