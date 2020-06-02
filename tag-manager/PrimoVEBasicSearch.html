@@ -19,13 +19,13 @@
   <!-- Script that converts the query string into valid parameter -->
 
 <script type="text/javascript">
-function searchPrimo() {
+function searchPrimoBasic() {
 document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
 document.forms["searchForm"].submit();
 }
 </script>
 
-<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()" onkeypress="if(event.keyCode===13){searchPrimo(); return false;}">
+<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoBasic()" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="Everything">
@@ -42,7 +42,7 @@ document.forms["searchForm"].submit();
 <input type="hidden" name="pcAvailabiltyMode" value="true">
 <input type="text" id="primoQueryTemp" value="" size="35">
 <!-- Search Button -->
-<input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+<input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
 
 </form>
   
