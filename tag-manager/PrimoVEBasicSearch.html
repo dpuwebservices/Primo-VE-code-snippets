@@ -32,7 +32,7 @@ window.open(primoveBasicSearch);
 <input type="hidden" name="displayField" value="all">
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
 <input type="hidden" name="pcAvailabiltyMode" value="true">
-<input type="text" id="primoQueryTemp" value="" size="35">
+<input  type="text" id="primoQueryTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
 <!-- Search Button -->
 <input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
 
