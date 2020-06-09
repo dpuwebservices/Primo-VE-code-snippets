@@ -1,31 +1,23 @@
-<!doctype html>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-<title>Primo VE Basic search form</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-</head>
-
-<body>
-  <script src="js/scripts.js"></script>
-  
   
   <!-- Script that converts the query string into valid parameter -->
 
 <script type="text/javascript">
 function searchPrimoBasic() {
-document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-document.forms["searchForm"].submit();
+var testing=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + testing +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+//alert(primoveBasicSearch);
+window.open(primoveBasicSearch);    
+
+//document.forms["searchForm"].submit();
+// var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + scope + "&format=" + formatVal;
+// window.open(worldcat);
+
 }
 </script>
 
-<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoBasic()" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
+<!--<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoBasic()" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">-->
+
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="Everything">
@@ -44,7 +36,4 @@ document.forms["searchForm"].submit();
 <!-- Search Button -->
 <input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
 
-</form>
-  
-</body>
-</html>
+
