@@ -1,0 +1,52 @@
+<script>
+   function submitWC() {
+   
+      var formatVal = "all";
+      if (document.getElementsByName('format')[0].checked){
+        formatVal="Artchap&format=Jrnl&format=News";
+      }
+      var scope = ""; 
+      if (document.getElementById('scope').value != "999"){ // explicit fake value to indicate search all
+        scope=document.getElementById('scope').value;
+      }
+      var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + scope + "&format=" + formatVal;
+      window.open(worldcat);    
+   }
+   
+    function changeWCSearch() {
+      if (document.getElementsByName('q')[0].value.trim()==""){
+        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+      }
+    }
+   
+    function setWCSearch() {
+      document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+    }
+   
+    function clearWCSearch() {
+      if (document.getElementsByName('q')[0].value=="Search books, articles, I-Share and more..." ){
+      document.getElementsByName('q')[0].value="";
+      }
+      else {
+        if (document.getElementsByName('q')[0].value==""){
+        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
+        }
+      }
+    }
+</script>
+
+
+                     <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text form-control" id="q" onkeypress="if(event.keyCode===13){submitWC(); return false;}" onfocus="clearWCSearch();" onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/></span> 
+                  <span class="hpadding col-md-4 col-sm-12 m10-b"> 
+                     <label class="offscreen" for="scope">Select Scope</label><select name="scope" id="scope" class="form-control"><option value="999">Libraries Worldwide</option><!-- Need a fake value here because null gets stripped out --><option value="sz:30986">I-Share Libraries</option><option value="sz:33458">DePaul University</option> </select> 
+                     <input name="oldscope" type="hidden"/></span> 
+                     <input id="wcl_search_button" onclick="submitWC(); return false;" value="Search" type="submit" class="btn btn-primary m0-a"/> </span> 
+                     <label class="offscreen" for="format">Search Articles Only</label><input name="format" type="checkbox"/><span class="p10-l">Search articles only</span> 
+                        <a onclick="setWCSearch();" target="_parent" title="A to Z Databases" href="/find/Pages/Articles-A-Z-Databases-and-Journals.aspx"> 
+                           <strong>A–Z Databases</strong></a> 
+                       &nbsp;|&nbsp; 
+                        <a onclick="setWCSearch();" target="_parent" title="Research Guides" href="/get-help/Pages/Research-Guides.aspx">
+                           <strong>Research Guides</strong></a> 
+                        &nbsp;|&nbsp; 
+                        <a onclick="setWCSearch();" target="_parent" title="DePaul VuFind Catalog" href="https://vufind.carli.illinois.edu/vf-dpu/">
+                           <strong>DePaul VuFind Catalog</strong></a>&nbsp;|&nbsp;<a onclick="setWCSearch();" target="_parent" title="E-book Search" href="https://libguides.depaul.edu/ebooks"><strong>E-book Search</strong>
