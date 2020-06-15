@@ -15,8 +15,8 @@
 <body>
 <script type="text/javascript">
 
-function searchPrimo() {
-    document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+function searchPrimoWithScope() {
+    document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
     document.forms["OnesearchForm"].submit();
 }
 
@@ -25,37 +25,37 @@ function primoScopeSwitch(scope) {
         case "Everything":
         document.getElementById("primoTab").value = "Everything";
         document.getElementById("primoScope").value = "MyInst_and_CI";
-        document.getElementById("primoQueryTemp").placeholder = "Books, articles, media, and more";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
         break;
    
 		case "Articles":
         document.getElementById("primoTab").value = "CentralIndex";
         document.getElementById("primoScope").value = "CentralIndex";
-        document.getElementById("primoQueryTemp").placeholder = "Articles and more";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
         break;
 
       case "Library Catalog":
         document.getElementById("primoTab").value = "LibraryCatalog";
         document.getElementById("primoScope").value = "LibraryCatalog";
-        document.getElementById("primoQueryTemp").placeholder = "Print books,DVDs,and journals";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
         break;
         
       case "IShare":
         document.getElementById("primoTab").value = "NewDiscoveryNetwork";
         document.getElementById("primoScope").value = "NewDiscoveryNetwork";
-        document.getElementById("primoQueryTemp").placeholder = "Books & more from I-Share Libraries";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
         break;		
         
       case "Worldcat":
         document.getElementById("primoTab").value = "WORLDCAT_API";
         document.getElementById("primoScope").value = "WORLDCAT_API";
-        document.getElementById("primoQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
         break;		
 
       case "CourseReserves":
         document.getElementById("primoTab").value = "CourseReserves";
         document.getElementById("primoScope").value = "CourseReserves";
-        document.getElementById("primoQueryTemp").placeholder = "Items specific to DePaul corses";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul corses";
         break;		
         
     }
@@ -70,7 +70,7 @@ window.onload = function() {
 
   
 
-<form action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimo()" target="_self">
+<form action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimoWithScope()" target="_self">
 <!-- Customizable Parameters -->
 	<input name="institution" type="hidden" value="01CARLI_DPU" /> 
 	<input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
@@ -82,7 +82,7 @@ window.onload = function() {
 	<input name="bulkSize" type="hidden" value="10" /> 
 	<input name="highlight" type="hidden" value="true" /> 
 	<input name="dum" type="hidden" value="true" /> 
-	<input id="primoQuery" name="query" type="hidden" /> 
+	<input id="primoScopeQuery" name="query" type="hidden" /> 
 	<input name="displayField" type="hidden" value="all" /> 
 	
 <!-- Select Statement with values from case  Fires onchange --> 
@@ -97,9 +97,9 @@ window.onload = function() {
 	
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
 	<input name="pcAvailabiltyMode" type="hidden" value="true" /> 
-	<input id="primoQueryTemp" size="35" type="text" value="" aria-label="Search" /> 
+	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" /> 
 <!-- Search Button --> 
-	<input alt="Go" id="go" onclick="searchPrimo()" style="height: 22px; font-size: 12px; font-weight: bold; background: #005693; color: #ffffff; border: 1px solid;" title="Search" type="button" value="Search" />&nbsp;
+	<input alt="Go" id="go" onclick="searchPrimoWithScope()" style="height: 22px; font-size: 12px; font-weight: bold; background: #005693; color: #ffffff; border: 1px solid;" title="Search" type="button" value="Search" />&nbsp;
 </form>
   
   
