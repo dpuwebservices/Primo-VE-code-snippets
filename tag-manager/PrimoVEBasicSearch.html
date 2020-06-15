@@ -4,8 +4,8 @@
 
 <script type="text/javascript">
 function searchPrimoBasic() {
-var testing=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + testing +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+var searchString=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + searchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
 //alert(primoveBasicSearch);
 window.open(primoveBasicSearch);    
 
