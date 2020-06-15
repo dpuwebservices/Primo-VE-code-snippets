@@ -1,9 +1,15 @@
 <script type="text/javascript">
 
 function searchPrimoWithScope() {
-    document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
-    document.forms["OnesearchForm"].submit();
+    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+//    document.forms["OnesearchForm"].submit();
+    var primoBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+    var searchScope = document.getElementById("scopeSelecter").value; 
+
+    alert (searchScope);
+    var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
 }
+
 
 function primoScopeSwitch(scope) {
     switch(scope.value) {
@@ -49,13 +55,13 @@ function primoScopeSwitch(scope) {
 //Windows on load function to load the intitial change
 window.onload = function() {
  var scope = document.getElementById("scopeSelecter"); 
-          primoScopeSwitch(scope);
+    primoScopeSwitch(scope);
 };
 </script>
 
   
 
-<form action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimoWithScope()" target="_blank">
+<!--<form action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimoWithScope()" target="_blank">-->
 <!-- Customizable Parameters -->
 	<input name="institution" type="hidden" value="01CARLI_DPU" /> 
 	<input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
@@ -85,5 +91,6 @@ window.onload = function() {
 	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" /> 
 <!-- Search Button --> 
 	<input alt="Go" id="go" onclick="searchPrimoWithScope()" style="height: 22px; font-size: 12px; font-weight: bold; background: #005693; color: #ffffff; border: 1px solid;" title="Search" type="button" value="Search" />&nbsp;
-</form>
+  
+<!--</form>-->
   
