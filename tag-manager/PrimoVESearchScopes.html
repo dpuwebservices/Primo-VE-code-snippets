@@ -3,16 +3,18 @@
 function searchPrimoWithScope() {
     var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
 
-    var primoBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+//    var primoBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
     var searchScope = document.getElementById("scopeSelecter").value; 
+    var searchTab = document.getElementById("primoTab"); 
+console.log("scope is " + searchScope);
 
     var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=' + searchScope +'&lang=en&offset=0';
-    alert(primoScopeSearch);
+    console.log(primoScopeSearch);
 }
 
 
 function primoScopeSwitch(scope) {
-  console.log("function called. scope is " + scope);
+  console.log("function called. scope is " + scope.value);
     switch(scope.value) {
         case "Everything":
         document.getElementById("primoTab").value = "Everything";
@@ -51,12 +53,13 @@ function primoScopeSwitch(scope) {
         break;		
         
     }
-    console.log("scope is now" + scope);
+    console.log("scope is now " + document.getElementById("primoScope").value);
+    console.log("tab is " + document.getElementById("primoTab").value);
 }
 
 //Windows on load function to load the intitial change
 window.onload = function() {
- var scope = document.getElementById("scopeSelecter"); 
+ var scope = document.getElementById("scopeSelecter").value; 
     primoScopeSwitch(scope);
 };
 </script>
