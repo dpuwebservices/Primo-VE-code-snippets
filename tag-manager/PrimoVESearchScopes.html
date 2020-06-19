@@ -86,7 +86,7 @@ window.onload = function() {
 	
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
 	<input name="pcAvailabiltyMode" type="hidden" value="true" /> 
-	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" /> 
+	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
 <!-- Search Button --> 
 	<input alt="Go" id="go" onclick="searchPrimoWithScope()" style="height: 22px; font-size: 12px; font-weight: bold; background: #005693; color: #ffffff; border: 1px solid;" title="Search" type="button" value="Search" />&nbsp;
   
