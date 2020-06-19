@@ -2,21 +2,13 @@
   
   <!-- Script that converts the query string into valid parameter -->
 
-<script type="text/javascript">
+<script type="text/javascript">  
 function searchPrimoBasic() {
-var searchString=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + searchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
-//alert(primoveBasicSearch);
-window.open(primoveBasicSearch);    
-
-//document.forms["searchForm"].submit();
-// var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + scope + "&format=" + formatVal;
-// window.open(worldcat);
-
+  var searchString=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+  var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + searchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+  window.open(primoveBasicSearch);    
 }
 </script>
-
-<!--<form id="simple" name="searchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoBasic()" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">-->
 
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
@@ -34,6 +26,6 @@ window.open(primoveBasicSearch);
 <input type="hidden" name="pcAvailabiltyMode" value="true">
 <input  type="text" id="primoQueryTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
 <!-- Search Button -->
-<input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+<input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search">
 
 
