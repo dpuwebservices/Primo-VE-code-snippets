@@ -1,20 +1,17 @@
 <script type="text/javascript">
 
 function searchPrimoWithScope() {
-    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
     var view = '01CARLI_DPU:CARLI_DPU';
+    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
     var searchScope = document.getElementById("primoScope").value; 
     var searchTab = document.getElementById("primoTab").value; 
-console.log("scope is " + searchScope + 'and tab is' + searchTab);
-
     var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
             + '&vid=' + view + '&lang=en&offset=0';
-    console.log(primoScopeSearch);
+    window.open(primoScopeSearch);
 }
 
 
 function primoScopeSwitch(scope) {
-  console.log("function called. scope is " + scope.value);
     switch(scope.value) {
         case "Everything":
         document.getElementById("primoTab").value = "Everything";
@@ -53,21 +50,16 @@ function primoScopeSwitch(scope) {
         break;		
         
     }
-    console.log("scope is now " + document.getElementById("primoScope").value);
-    console.log("tab is " + document.getElementById("primoTab").value);
 }
 
 //Windows on load function to load the intitial change
 window.onload = function() {
  var scope = document.getElementById("scopeSelecter").value; 
- console.log('outside of function scope is '+scope);
     primoScopeSwitch(scope);
 };
 </script>
 
-  
 
-<!--<form action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="OnesearchForm" onsubmit="searchPrimoWithScope()" target="_blank">-->
 <!-- Customizable Parameters -->
 	<input name="institution" type="hidden" value="01CARLI_DPU" /> 
 	<input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
@@ -98,5 +90,4 @@ window.onload = function() {
 <!-- Search Button --> 
 	<input alt="Go" id="go" onclick="searchPrimoWithScope()" style="height: 22px; font-size: 12px; font-weight: bold; background: #005693; color: #ffffff; border: 1px solid;" title="Search" type="button" value="Search" />&nbsp;
   
-<!--</form>-->
-  
+
