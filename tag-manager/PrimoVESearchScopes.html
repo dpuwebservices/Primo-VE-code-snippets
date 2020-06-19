@@ -2,13 +2,13 @@
 
 function searchPrimoWithScope() {
     var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+    var view = '01CARLI_DPU:CARLI_DPU';
+    var searchScope = document.getElementById("primoScope").value; 
+    var searchTab = document.getElementById("primoTab").value; 
+console.log("scope is " + searchScope + 'and tab is' + searchTab);
 
-//    var primoBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
-    var searchScope = document.getElementById("scopeSelecter").value; 
-    var searchTab = document.getElementById("primoTab"); 
-console.log("scope is " + searchScope);
-
-    var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=Everything&search_scope=' + searchScope +'&lang=en&offset=0';
+    var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
+            + '&vid=' + view + '&lang=en&offset=0';
     console.log(primoScopeSearch);
 }
 
@@ -30,7 +30,7 @@ function primoScopeSwitch(scope) {
 
       case "Library Catalog":
         document.getElementById("primoTab").value = "LibraryCatalog";
-        document.getElementById("primoScope").value = "LibraryCatalog";
+        document.getElementById("primoScope").value = "MyInstitution";
         document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
         break;
         
@@ -60,6 +60,7 @@ function primoScopeSwitch(scope) {
 //Windows on load function to load the intitial change
 window.onload = function() {
  var scope = document.getElementById("scopeSelecter").value; 
+ console.log('outside of function scope is '+scope);
     primoScopeSwitch(scope);
 };
 </script>
