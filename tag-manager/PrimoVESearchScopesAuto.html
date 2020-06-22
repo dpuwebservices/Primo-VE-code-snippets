@@ -1,0 +1,210 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+<title>Primo VE Search Scope Form auto complete</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body> 
+ <script>
+    
+
+
+//PRIMO SEARCH BLOCK CONFIGURATION
+//Primo searchPrimo() function
+//Passes request to primo site
+function searchPrimo() {
+document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryText").value.replace(/[,]/g, " ");
+document.forms["searchForm"].submit();
+}
+//These are the search options matching what is on Primo
+//Where title is the text to display in the option to the user
+//Where tabID is the &tab variable in the Primo URL
+//Where scopeID is the &search_scope variable in the Primo URL
+var searchOptions = [
+{
+"title": "Everything",
+"tabID": "Everything",
+"scopeID": "MyInst_and_CI"
+},
+{
+"title": "UAlbany Libraries",
+"tabID": "LibraryCatalog",
+"scopeID": "MyInstitution"
+}, 
+{
+"title": "SUNY Libraries",
+"tabID": "NEWSUNY",
+"scopeID": "NewDiscoveryNetwork"
+},
+{
+"title": "Course Reserves",
+"tabID": "CourseReserves",
+"scopeID": "CourseReserves"
+}
+];
+document.addEventListener('DOMContentLoaded', function() {
+var dropdown = document.getElementById('primoSearchFlags'); //gets the dropdown holder in the form
+var autocomplete = document.getElementById('primoAutocomplete'); //gets the autocomplete div in the form
+var autocompleteul = document.createElement('ul');
+autocomplete.append(autocompleteul);
+//create each dropdown element and autocomplete element
+for (var i=0; i<searchOptions.length; i++) {
+if(i==0) {
+document.getElementById('dropdownTitle').innerHTML = searchOptions[i].title;
+}
+//dropdown element
+var dropitem = document.createElement('a');
+dropitem.classList.add('dropdown-item');
+dropitem.setAttribute('tabID', searchOptions[i].tabID);
+dropitem.setAttribute('id', searchOptions[i].tabID);
+dropitem.setAttribute('scopeID', searchOptions[i].scopeID);
+dropitem.innerHTML = searchOptions[i].title;
+//append the drop element to DOM
+dropdown.append(dropitem);
+//set up a listener for on click to change the primo variables
+dropitem.addEventListener("click", function(e) {
+console.log(e);
+var primotabval = document.getElementById('primoTabVal');
+var primoscopeval = document.getElementById('primoScopeVal');
+var dropdowntitle = document.getElementById('dropdownTitle');
+//set the values for scope and tab
+primotabval.value = e.target.attributes.tabID.nodeValue;
+primoscopeval.value = e.target.attributes.scopeID.nodeValue;
+dropdowntitle.innerHTML = e.target.innerHTML;
+});
+//autocomplete element
+var autoitem = document.createElement('a');
+autoitem.classList.add('autocomplete-result');
+autoitem.setAttribute('id', searchOptions[i].tabID);
+autoitem.setAttribute('tabID', searchOptions[i].tabID);
+autoitem.setAttribute('scopeID', searchOptions[i].scopeID);
+autoitem.innerHTML = "<span class='current-search-query'></span> in " + searchOptions[i].title +''; 
+autocompleteul.append(autoitem);
+document.getElementById('primoAutocomplete').style.display = 'none';
+//listener for each autocomplete item
+autoitem.addEventListener('click', function(e) {
+console.log(e);
+var primotabval = document.getElementById('primoTabVal');
+var primoscopeval = document.getElementById('primoScopeVal');
+//set the values for scope and tab
+primotabval.value = e.target.attributes.tabID.nodeValue;
+primoscopeval.value = e.target.attributes.scopeID.nodeValue;
+//run the search since theyve clicked
+searchPrimo();
+})
+};
+//listener for text input change
+document.getElementById('primoQueryText').addEventListener('input', validateAutocomplete);
+//listener for when user stops focusing on input
+document.getElementById('primoQueryText').addEventListener('focusout', function() {
+setTimeout(validateAutocomplete, 2000);
+});
+//listener for when user focuses on input
+document.getElementById('primoQueryText').addEventListener('focusin', validateAutocomplete);
+function validateAutocomplete() {
+var input = document.getElementById('primoQueryText');
+var query = document.getElementById('primoQueryText').value;
+if (input === document.activeElement && query.length > 1) {
+//only show options if the input is focused and if there is 2 or more characters in query
+console.log('greater than 2 and focused');
+document.getElementById('primoAutocomplete').style.display = 'block';
+var span = document.getElementsByClassName('current-search-query');
+for (var x=0; x<span.length; x++) {
+span[x].innerHTML = query;
+}
+} else {
+//hide the div
+document.getElementById('primoAutocomplete').style.display = 'none';
+};
+};
+});
+
+
+  </script>
+  
+  
+
+
+<div id="primo-search">
+   <div class="container" style="background-image: url('/themes/custom/ualibraries/img/primo-chevron-fat.png');">
+      <!--<div id="primo-search-icons">
+         <i class="fal fa-2x fa-book"></i>
+         <i class="fal fa-2x fa-newspaper"></i>
+         <i class="fal fa-2x fa-film"></i>
+         </div>-->
+      <div id="primo-search-label">
+         <h4>Search for
+            <br><span>books, articles, media</span><br>
+            and more
+         </h4>
+         <a class="advanced-search" alt="Go to Advanced Search" href="https://search.library.albany.edu/discovery/search?vid=01SUNY_ALB:01SUNY_ALB&amp;mode=advanced">
+            <svg class="svg-inline--fa fa-plus-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+               <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path>
+            </svg>
+            <!-- <i class="fas fa-plus-circle"></i> -->
+         </a>
+      </div>
+      <div id="primo-widget-container">
+         <section class="row region region-primo-search">
+            <div id="block-primosearch" class="settings-tray-editable block block-block-content block-block-content08f08dad-5b90-4db0-9e60-b5e6c35e581c" data-drupal-settingstray="editable">
+               <div class="content">
+                  <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+                     <!-- Script that converts the query string into valid parameter -->
+                     <script type="text/javascript" src="/themes/custom/ualibraries/js/primoblock.js"></script>
+                     <!-- Primo Search Form -->
+                     <form id="simple" name="searchForm" method="get" target="_self" autocomplete="off" action="https://search.library.albany.edu/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+                        <!-- Customizable Parameters -->
+                        <input type="hidden" autocomplete="false">
+                        <input type="hidden" name="institution" value="suny-alb">
+                        <input type="hidden" name="vid" value="01SUNY_ALB:01SUNY_ALB">
+                        <input type="hidden" name="tab" value="Everything" id="primoTabVal"> <!-- This changes depending on dropdown -->
+                        <input type="hidden" name="search_scope" value="MyInst_and_CI" id="primoScopeVal"> <!-- This changes depending on dropdown -->
+                        <input type="hidden" name="mode" value="basic">
+                        <!-- Fixed parameters -->
+                        <input type="hidden" name="displayMode" value="full">
+                        <input type="hidden" name="bulkSize" value="10">
+                        <input type="hidden" name="highlight" value="true">
+                        <input type="hidden" name="dum" value="true">
+                        <input type="hidden" name="query" id="primoQuery">
+                        <input type="hidden" name="displayField" value="all">
+                        <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+                        <input type="hidden" name="pcAvailabiltyMode" value="true">
+                        <div class="input-group">
+                           <input type="text" class="form-control" aria-label="Search Query" id="primoQueryText">
+                           <div class="input-group-append">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownTitle">Everything</button>
+                              <div class="dropdown-menu" id="primoSearchFlags">
+                                 <!-- Javascript takes care of search flags, see primoblock.js -->
+                                 <a class="dropdown-item" tabid="Everything" id="Everything" scopeid="MyInst_and_CI">Everything</a><a class="dropdown-item" tabid="LibraryCatalog" id="LibraryCatalog" scopeid="MyInstitution">UAlbany Libraries</a><a class="dropdown-item" tabid="NEWSUNY" id="NEWSUNY" scopeid="NewDiscoveryNetwork">SUNY Libraries</a><a class="dropdown-item" tabid="CourseReserves" id="CourseReserves" scopeid="CourseReserves">Course Reserves</a>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Autocomplete placeholder -->
+                        <div class="primo-autocomplete" id="primoAutocomplete" style="display: none;">
+                           <!-- Javascript takes care of adding autocomplete links as <a> tags  see primoblock.js -->
+                           <ul><a class="autocomplete-result" id="Everything" tabid="Everything" scopeid="MyInst_and_CI"><span class="current-search-query"></span> in Everything</a><a class="autocomplete-result" id="LibraryCatalog" tabid="LibraryCatalog" scopeid="MyInstitution"><span class="current-search-query"></span> in UAlbany Libraries</a><a class="autocomplete-result" id="NEWSUNY" tabid="NEWSUNY" scopeid="NewDiscoveryNetwork"><span class="current-search-query"></span> in SUNY Libraries</a><a class="autocomplete-result" id="CourseReserves" tabid="CourseReserves" scopeid="CourseReserves"><span class="current-search-query"></span> in Course Reserves</a></ul>
+                        </div>
+                        <!-- Search Button -->
+                        <input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" class="btn btn-primary">
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <!--<img src="themes/custom/ualibraries/img/search-resources-gold.svg" class="icon-prefix-search-form"> -->
+   </div>
+</div>
+
+
+
+</body>
+</html>

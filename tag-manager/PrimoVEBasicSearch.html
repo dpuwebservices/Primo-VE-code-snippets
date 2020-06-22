@@ -1,0 +1,31 @@
+
+  
+  <!-- Script that converts the query string into valid parameter -->
+
+<script type="text/javascript">  
+function searchPrimoBasic() {
+  var searchString=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+  var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + searchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+  window.open(primoveBasicSearch);    
+}
+</script>
+
+<!-- Customizable Parameters -->
+<input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
+<input type="hidden" name="tab" value="Everything">
+<input type="hidden" name="search_scope" value="MyInst_and_CI">
+<input type="hidden" name="mode" value="basic">
+<!-- Fixed parameters -->
+<input type="hidden" name="displayMode" value="full">
+<input type="hidden" name="bulkSize" value="10">
+<input type="hidden" name="highlight" value="true">
+<input type="hidden" name="dum" value="true">
+<input type="hidden" name="query" id="primoQuery">
+<input type="hidden" name="displayField" value="all">
+<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+<input type="hidden" name="pcAvailabiltyMode" value="true">
+<input  type="text" id="primoQueryTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
+<!-- Search Button -->
+<input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search">
+
+
