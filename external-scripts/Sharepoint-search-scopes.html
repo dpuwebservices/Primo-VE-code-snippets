@@ -54,8 +54,10 @@ function primoScopeSwitch(scope) {
 
 //Windows on load function to load the intitial change
 window.onload = function() {
- var scope = document.getElementById("scopeSelecter").value; 
-    primoScopeSwitch(scope);
+  document.getElementById("scopeSelecter").value = "Everything";
+  document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+  var scope = document.getElementById("scopeSelecter").value; 
+  primoScopeSwitch(scope);
 };
 </script>
 
