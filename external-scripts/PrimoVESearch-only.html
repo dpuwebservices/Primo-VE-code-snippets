@@ -1,0 +1,129 @@
+<script type="text/javascript">
+   function searchPrimoWithScope() {
+       var view = '01CARLI_DPU:CARLI_DPU';
+       var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+       var searchScope = document.getElementById("primoScope").value; 
+       var searchTab = document.getElementById("primoTab").value; 
+       var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
+               + '&vid=' + view + '&lang=en&offset=0';
+       window.open(primoScopeSearch);
+   }
+   
+   
+   function primoScopeSwitch(scope) {
+       switch(scope.value) {
+           case "Everything":
+           document.getElementById("primoTab").value = "Everything";
+           document.getElementById("primoScope").value = "MyInst_and_CI";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+           break;
+      
+   		case "Articles":
+           document.getElementById("primoTab").value = "CentralIndex";
+           document.getElementById("primoScope").value = "CentralIndex";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
+           break;
+   
+         case "Library Catalog":
+           document.getElementById("primoTab").value = "LibraryCatalog";
+           document.getElementById("primoScope").value = "MyInstitution";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
+           break;
+           
+         case "IShare":
+           document.getElementById("primoTab").value = "NewDiscoveryNetwork";
+           document.getElementById("primoScope").value = "NewDiscoveryNetwork";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
+           break;		
+           
+         case "Worldcat":
+           document.getElementById("primoTab").value = "WORLDCAT_API";
+           document.getElementById("primoScope").value = "WORLDCAT_API";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
+           break;		
+   
+         case "CourseReserves":
+           document.getElementById("primoTab").value = "CourseReserves";
+           document.getElementById("primoScope").value = "CourseReserves";
+           document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul courses";
+           break;		
+           
+       }
+   }
+   
+window.onload = function() {
+  document.getElementById("scopeSelecter").value = "Everything";
+  document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+  var scope = document.getElementById("scopeSelecter").value; 
+  primoScopeSwitch(scope);
+};
+</script>
+<!-- Customizable Parameters -->
+<input name="institution" type="hidden" value="01CARLI_DPU" /> 
+<input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
+<input id="primoTab" name="tab" type="hidden" value="Everything" /> 
+<input id="primoScope" name="search_scope" type="hidden" value="MyInst_and_CI" /> 
+<input name="mode" type="hidden" value="Basic" /> 
+<!-- Fixed parameters --> 
+<input name="displayMode" type="hidden" value="full" /> 
+<input name="bulkSize" type="hidden" value="10" /> 
+<input name="highlight" type="hidden" value="true" /> 
+<input name="dum" type="hidden" value="true" /> 
+<input id="primoScopeQuery" name="query" type="hidden" /> 
+<input name="displayField" type="hidden" value="all" /> 
+<div class="row">
+
+      <div class="card m30-b m40-t" id="discovery_container">
+         <div class="block card-body bg-light shadow-sm">
+            <div class="row align-items-center">
+               <div class="col-sm-12">
+                  <h2 class="header">LibrarySearch</h2>
+                  <p class="header"><a href="https://libguides.depaul.edu/migration">Learn more</a></p>
+               </div>
+            </div>
+            <div class="block">
+               <div class="block row">
+                  <p class="hpadding label col-md-1 col-sm-12 m10-b">Search</p>
+                  <span class="hpadding col-md-4 col-sm-12 m10-b">
+                     <!-- Select Statement with values from case  Fires onchange --> 
+                     <select id="scopeSelecter" name="scopeSelecter" class="form-control" onchange="primoScopeSwitch(this)" aria-label="search options">
+                        <option value="Everything"><label>Everything at DePaul</label></option>
+                        <option value="Articles"><label>Articles & More at DePaul</label></option>
+                        <option value="Library Catalog"><label>DePaul Library Catalog</label></option>
+                        <option value="IShare"><label>All I-Share Libraries</label></option>
+                        <option value="Worldcat"><label>Libraries Worldwide</label></option>
+                        <option value="CourseReserves"><label>Course Reserves</label></option>
+                     </select>
+                  </span>
+                  <p style="text-align:center;" class="hpadding label col-md-1 col-sm-12 m10-b">for</p>
+                  <span class="col-md-4 col-sm-12 m10-b">
+                     <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
+                     <input name="pcAvailabiltyMode" type="hidden" value="true" /> 
+                     <input id="primoScopeQueryTemp" class="form-control" size="16" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
+                  </span>
+                  <span class="col-md-2 col-sm-12 m10-b"> 
+                  <!-- Search Button --> 
+                  <input id="discovery_search_button" class="btn btn-primary m0-a" alt="Go" id="go" onclick="searchPrimoWithScope()" title="Search" type="button" value="Search" />                    
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="card m30-b m40-t">
+         <div class="p10-t p15-b col-sm-12 bg-light shadow-sm">
+            <div class="p10-t block right" id="advanced">
+               <a target="_parent" title="A to Z Databases" href="https://libguides.depaul.edu/az.php"> 
+               <strong>A–Z Databases</strong></a> 
+               &nbsp;|&nbsp; 
+               <a target="_parent" title="Research Guides" href="https://libguides.depaul.edu/">
+               <strong>Research Guides</strong></a> 
+               &nbsp;|&nbsp; 
+               <a target="_parent" title="E-book Search" href="https://libguides.depaul.edu/ebooks"><strong>E-book Search</strong></a>
+               <!--  Uncomment line below to display a message                                                                        
+                  <p class="notice"> </p> --> 
+            </div>
+         </div>
+      </div>
+
+
+</div>
+
