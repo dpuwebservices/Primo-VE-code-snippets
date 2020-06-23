@@ -52,6 +52,14 @@ function primoScopeSwitch(scope) {
     }
 }
 
+//Windows on load function to load the intitial change
+window.onload = function() {
+ var scope = document.getElementById("scopeSelecter").value; 
+    primoScopeSwitch(scope);
+};
+</script>
+
+
 <div class="row"> 
    <div class="col-md-8 col-sm-12"> 
       <div class="card m30-b m40-t">
