@@ -1,39 +1,57 @@
-<script>
-   function submitWC() {
+<script type="text/javascript">
+
+function searchPrimoWithScope() {
+    var view = '01CARLI_DPU:CARLI_DPU';
+    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+    var searchScope = document.getElementById("primoScope").value; 
+    var searchTab = document.getElementById("primoTab").value; 
+    var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
+            + '&vid=' + view + '&lang=en&offset=0';
+    window.open(primoScopeSearch);
+}
+
+
+function primoScopeSwitch(scope) {
+    switch(scope.value) {
+        case "Everything":
+        document.getElementById("primoTab").value = "Everything";
+        document.getElementById("primoScope").value = "MyInst_and_CI";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+        break;
    
-      var formatVal = "all";
-      if (document.getElementsByName('format')[0].checked){
-        formatVal="Artchap&format=Jrnl&format=News";
-      }
-      var scope = ""; 
-      if (document.getElementById('scope').value != "999"){ // explicit fake value to indicate search all
-        scope=document.getElementById('scope').value;
-      }
-      var worldcat = 'https://depaul.on.worldcat.org/search?queryString=' + document.getElementsByName('q')[0].value + '&scope=' + scope + "&format=" + formatVal;
-      window.open(worldcat);    
-   }
-   
-    function changeWCSearch() {
-      if (document.getElementsByName('q')[0].value.trim()==""){
-        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
-      }
+		case "Articles":
+        document.getElementById("primoTab").value = "CentralIndex";
+        document.getElementById("primoScope").value = "CentralIndex";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
+        break;
+
+      case "Library Catalog":
+        document.getElementById("primoTab").value = "LibraryCatalog";
+        document.getElementById("primoScope").value = "MyInstitution";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
+        break;
+        
+      case "IShare":
+        document.getElementById("primoTab").value = "NewDiscoveryNetwork";
+        document.getElementById("primoScope").value = "NewDiscoveryNetwork";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
+        break;		
+        
+      case "Worldcat":
+        document.getElementById("primoTab").value = "WORLDCAT_API";
+        document.getElementById("primoScope").value = "WORLDCAT_API";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
+        break;		
+
+      case "CourseReserves":
+        document.getElementById("primoTab").value = "CourseReserves";
+        document.getElementById("primoScope").value = "CourseReserves";
+        document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul corses";
+        break;		
+        
     }
-   
-    function setWCSearch() {
-      document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
-    }
-   
-    function clearWCSearch() {
-      if (document.getElementsByName('q')[0].value=="Search books, articles, I-Share and more..." ){
-      document.getElementsByName('q')[0].value="";
-      }
-      else {
-        if (document.getElementsByName('q')[0].value==""){
-        document.getElementsByName('q')[0].value="Search books, articles, I-Share and more...";
-        }
-      }
-    }
-</script>
+}
+
 <div class="row"> 
    <div class="col-md-8 col-sm-12"> 
       <div class="card m30-b m40-t">
