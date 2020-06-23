@@ -48,11 +48,17 @@
             <input name="ai" value="wclocal_813" type="hidden"/> 
             <div class="block" id="wcl_searchbox">
                <div class="block row">
-                  <span class="col-md-6 col-sm-12 m10-b"> 
-                     <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text form-control" id="q" onkeypress="if(event.keyCode===13){submitWC(); return false;}" onfocus="clearWCSearch();" onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/></span> 
+                 
+                 <span class="hpadding col-md-1 col-sm-12 m10-b">Search</span>
                   <span class="hpadding col-md-4 col-sm-12 m10-b"> 
                      <label class="offscreen" for="scope">Select Scope</label><select name="scope" id="scope" class="form-control"><option value="999">Libraries Worldwide</option><!-- Need a fake value here because null gets stripped out --><option value="sz:30986">I-Share Libraries</option><option value="sz:33458">DePaul University</option> </select> 
-                     <input name="oldscope" type="hidden"/></span> 
+                     <input name="oldscope" type="hidden"/>
+                  </span> 
+                 <span class="hpadding col-md-1 col-sm-12 m10-b">for</span>                 
+                 
+                  <span class="col-md-4 col-sm-12 m10-b"> 
+                     <input name="q" title="Search books, articles, I-Share and more..." class="wcl_text form-control" id="q" onkeypress="if(event.keyCode===13){submitWC(); return false;}" onfocus="clearWCSearch();" onblur="changeWCSearch();" value="Search books, articles, I-Share and more..." type="text"/></span> 
+
                   <span class="col-md-2 col-sm-12 m10-b"> 
                      <input id="wcl_search_button" onclick="submitWC(); return false;" value="Search" type="submit" class="btn btn-primary m0-a"/> </span> 
                   <div class="p15-t p15-b col-sm-12">
