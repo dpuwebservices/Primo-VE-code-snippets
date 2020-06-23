@@ -71,9 +71,9 @@ window.onload = function() {
 <input name="dum" type="hidden" value="true" /> 
 <input id="primoScopeQuery" name="query" type="hidden" /> 
 <input name="displayField" type="hidden" value="all" /> 
-<div class="row">
 
-      <div class="card m30-b m40-t" id="discovery_container">
+
+      <div class="card" id="discovery_container">
          <div class="block card-body bg-light shadow-sm">
             <div class="row align-items-center">
                <div class="col-sm-12">
@@ -83,7 +83,7 @@ window.onload = function() {
             </div>
             <div class="block">
                <div class="block row">
-                  <p class="hpadding label col-md-1 col-sm-12 m10-b">Search</p>
+                  <p class="label col-md-1 col-sm-12 m10-b">Search</p>
                   <span class="hpadding col-md-4 col-sm-12 m10-b">
                      <!-- Select Statement with values from case  Fires onchange --> 
                      <select id="scopeSelecter" name="scopeSelecter" class="form-control" onchange="primoScopeSwitch(this)" aria-label="search options">
@@ -108,22 +108,19 @@ window.onload = function() {
             </div>
          </div>
       </div>
-      <div class="card m30-b m40-t">
-         <div class="p10-t p15-b col-sm-12 bg-light shadow-sm">
-            <div class="p10-t block right" id="advanced">
-               <a target="_parent" title="A to Z Databases" href="https://libguides.depaul.edu/az.php"> 
-               <strong>A–Z Databases</strong></a> 
-               &nbsp;|&nbsp; 
-               <a target="_parent" title="Research Guides" href="https://libguides.depaul.edu/">
-               <strong>Research Guides</strong></a> 
-               &nbsp;|&nbsp; 
-               <a target="_parent" title="E-book Search" href="https://libguides.depaul.edu/ebooks"><strong>E-book Search</strong></a>
-               <!--  Uncomment line below to display a message                                                                        
-                  <p class="notice"> </p> --> 
-            </div>
-         </div>
+
+      <div class="p10-t block right" id="advanced">
+         <a target="_parent" title="A to Z Databases" href="https://libguides.depaul.edu/az.php"> 
+         <strong>A–Z Databases</strong></a> 
+         &nbsp;|&nbsp; 
+         <a target="_parent" title="Research Guides" href="https://libguides.depaul.edu/">
+         <strong>Research Guides</strong></a> 
+         &nbsp;|&nbsp; 
+         <a target="_parent" title="E-book Search" href="https://libguides.depaul.edu/ebooks"><strong>E-book Search</strong></a>
+         <!--  Uncomment line below to display a message                                                                        
+            <p class="notice"> </p> --> 
       </div>
 
 
-</div>
+
 

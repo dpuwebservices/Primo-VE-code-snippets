@@ -51,11 +51,12 @@
        }
    }
    
-   //Windows on load function to load the intitial change
-   window.onload = function() {
-    var scope = document.getElementById("scopeSelecter").value; 
-       primoScopeSwitch(scope);
-   };
+window.onload = function() {
+  document.getElementById("scopeSelecter").value = "Everything";
+  document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+  var scope = document.getElementById("scopeSelecter").value; 
+  primoScopeSwitch(scope);
+};
 </script>
 <!-- Customizable Parameters -->
 <input name="institution" type="hidden" value="01CARLI_DPU" /> 
