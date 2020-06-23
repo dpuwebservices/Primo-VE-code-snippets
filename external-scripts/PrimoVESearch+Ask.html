@@ -14,9 +14,31 @@
             <div class="block">
                <div class="block row">
                  Search
-                  <span class="col-md-6 col-sm-12 m10-b"> input box</span> 
-                  <span class="hpadding col-md-4 col-sm-12 m10-b">select box</span> 
-                  <span class="col-md-2 col-sm-12 m10-b"> button </span> 
+                  <span class="col-md-2 col-sm-12 m10-b">
+
+<!-- Select Statement with values from case  Fires onchange --> 
+	<select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" aria-label="search options">
+	<option value="Everything"><label>Everything at DePaul</label></option>
+	<option value="Articles"><label>Articles & More at DePaul</label></option>
+	<option value="Library Catalog"><label>DePaul Library Catalog</label></option>
+	<option value="IShare"><label>All I-Share Libraries</label></option>
+	<option value="Worldcat"><label>Libraries Worldwide</label></option>
+	<option value="CourseReserves"><label>Course Reserves</label></option>
+	</select> 
+                    
+                  </span> 
+                 for 
+                  <span class="hpadding col-md-6 col-sm-12 m10-b">
+<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
+	<input name="pcAvailabiltyMode" type="hidden" value="true" /> 
+	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
+<!-- Search Button -->                   
+                  </span> 
+  <!-- Search Button --> 
+	<input alt="Go" id="go" onclick="searchPrimoWithScope()" title="Search" type="button" value="Search" />
+                  
+                  
+                  
                   <div class="p15-t p15-b col-sm-12">
                      <div class="p15-t block right" id="advanced">
                         <a target="_parent" title="A to Z Databases" href="https://libguides.depaul.edu/az.php"> 
