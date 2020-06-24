@@ -17,9 +17,12 @@ document.forms["searchForm"].submit();
 <input type="hidden" name="highlight" value="true">
 <input type="hidden" name="dum" value="true">
 <input type="hidden" name="query" id="primoQuery">
+<input type="hidden" name="facet" value="tlevel,include,online_resources">
+<input type="hidden" name="facet" value="rtype,include,books">
 <input type="hidden" name="displayField" value="all">
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
 <input type="hidden" name="pcAvailabiltyMode" value="true">
+<h2>E-book search</h2>
 <input type="text" id="primoQueryTemp" value="" size="35">
 <!-- Search Button -->
 <input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search">
