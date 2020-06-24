@@ -3,10 +3,10 @@
   <!-- Script that converts the query string into valid parameter -->
 
 <script type="text/javascript">  
-function searchPrimoBasic() {
-  var searchString=document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-  var primoveBasicSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + searchString +'&tab=Everything&search_scope=MyInst_and_CI&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
-  window.open(primoveBasicSearch);    
+function searchPrimoJournal() {
+  var searchString=document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
+  var primoveBasicJournalSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=' + searchString +'&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+  window.open(primoveBasicJournalSearch);    
 }
 </script>
 
@@ -20,12 +20,12 @@ function searchPrimoBasic() {
 <input type="hidden" name="bulkSize" value="10">
 <input type="hidden" name="highlight" value="true">
 <input type="hidden" name="dum" value="true">
-<input type="hidden" name="query" id="primoQuery">
+<input type="hidden" name="query" id="primoQueryJournal">
 <input type="hidden" name="displayField" value="all">
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
 <input type="hidden" name="pcAvailabiltyMode" value="true">
-<input  type="text" id="primoQueryTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoBasic(); return false;}">
+<input  type="text" id="primoQueryJournalTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoJournal(); return false;}">
 <!-- Search Button -->
-<input id="go" title="Search" onclick="searchPrimoBasic()" type="button" value="Search" alt="Search">
+<input id="goJournal" title="Search" onclick="searchPrimoJournal()" type="button" value="Find Journal" alt="Search">
 
 
