@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function searchPrimoJournal() {
 document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
-document.forms["searchFormJournal"].submit();
+document.forms["searchForm"].submit();
 }
 </script>
 
@@ -22,7 +22,7 @@ document.forms["searchFormJournal"].submit();
 <input type="hidden" name="pcAvailabiltyMode" value="true">
 <input type="text" id="primoQueryJournalTemp" value="" size="35">
 <!-- Search Button -->
-<input id="goJournal" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" class="search-button">
+<input id="goJournal" title="Search" onclick="searchPrimo()" type="button" value="Find Journal" alt="Search" class="search-button">
 
 </form>
 
