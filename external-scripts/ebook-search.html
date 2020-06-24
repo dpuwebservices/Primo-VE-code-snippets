@@ -1,11 +1,11 @@
 <script type="text/javascript">
-function searchPrimo() {
-document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+function searchPrimoEbook() {
+document.getElementById("primoQueryEbook").value = "any,contains," + document.getElementById("primoQueryEbookTemp").value.replace(/[,]/g, " ");
 document.forms["ebookSearchForm"].submit();
 }
 </script>
 
-<form id="simple-ebook-search" name="ebookSearchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+<form id="simple-ebook-search" name="ebookSearchForm" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoEbook()">
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="Everything">
@@ -16,15 +16,15 @@ document.forms["ebookSearchForm"].submit();
 <input type="hidden" name="bulkSize" value="10">
 <input type="hidden" name="highlight" value="true">
 <input type="hidden" name="dum" value="true">
-<input type="hidden" name="query" id="primoQuery">
+<input type="hidden" name="query" id="primoQueryEbook">
 <input type="hidden" name="facet" value="tlevel,include,online_resources">
 <input type="hidden" name="facet" value="rtype,include,books">
 <input type="hidden" name="displayField" value="all">
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
 <input type="hidden" name="pcAvailabiltyMode" value="true">
-<input type="text" id="primoQueryTemp" value="" size="35">
+<input type="text" id="primoQueryEbookTemp" value="" size="35">
 <!-- Search Button -->
-<input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search for E-books" alt="Search" class="search-button">
+<input id="go" title="Search" onclick="searchPrimoEbook()" type="button" value="Search for E-books" alt="Search" class="search-button">
 
 </form>
 
