@@ -1,7 +1,10 @@
 <script type="text/javascript">
 function searchPrimoJournal() {
-document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
-document.forms["searchFormJournal"].submit();
+  var tmpSearch=document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
+  document.getElementById("journalsParm").value = "any," + tmpSearch;
+  document.getElementById("primoQueryJournal").value = "any,contains," + tmpSearch;
+  document.forms["searchFormJournal"].submit();
+  console.log(searchFormJournal + "\n compared to " + "https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,xxx&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&journals=any,xxx");
 }
 </script>
 
@@ -10,23 +13,10 @@ document.forms["searchFormJournal"].submit();
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="jsearch_slot">
 <input type="hidden" name="offset" value="0">
-    
-<!-- need to append search string here, somehow   -->
-<input type="hidden" name="journals" value="any"> 
-    
+<input type="hidden" name="journals" id="journalsParm" value=""> 
 <input type="hidden" name="query" id="primoQueryJournal">
 <input type="text" id="primoQueryJournalTemp" value="" size="35">
 <!-- Search Button -->
 <input id="goJournal" title="Search" onclick="searchPrimoJournal()" type="button" value="Find Journal" alt="Search" class="search-button">
 </form>
 
-
-<!--
-manual search
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?vid=01CARLI_DPU:CARLI_DPU&tab=jsearch_slot&offset=0%26journals%3Dany,journals&query=any,contains,engineering
-
-form
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,engineering&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&journals=any,engineering
-
-
--->
