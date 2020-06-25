@@ -1,0 +1,27 @@
+<script type="text/javascript">
+function searchPrimoSimple() {
+document.getElementById("primoQuerySimple").value = "any,contains," + document.getElementById("primoQuerySimpleTemp").value.replace(/[,]/g, " ");
+document.forms["searchFormSimple"].submit();
+}
+</script>
+
+<form id="simple" name="searchFormSimple" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoSimple()">
+<!-- Customizable Parameters -->
+<input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
+<input type="hidden" name="tab" value="Everything">
+<input type="hidden" name="search_scope" value="MyInst_and_CI">
+<input type="hidden" name="mode" value="basic">
+<!-- Fixed parameters -->
+<input type="hidden" name="displayMode" value="full">
+<input type="hidden" name="bulkSize" value="10">
+<input type="hidden" name="highlight" value="true">
+<input type="hidden" name="dum" value="true">
+<input type="hidden" name="query" id="primoQuerySimple">
+<input type="hidden" name="displayField" value="all">
+<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+<input type="hidden" name="pcAvailabiltyMode" value="true">
+<input type="text" id="primoQuerySimpleTemp" value="" size="35">
+<!-- Search Button -->
+<input id="goSimple" title="Search" onclick="searchPrimoSimple()" type="button" value="Search" alt="Search" class="search-button">
+
+</form>
