@@ -1,7 +1,7 @@
 <script type="text/javascript">
 function searchPrimoJournal() {
 document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
-document.forms["searchForm"].submit();
+document.forms["searchFormJournal"].submit();
 }
 </script>
 
@@ -9,32 +9,24 @@ document.forms["searchForm"].submit();
 <!-- Customizable Parameters -->
 <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
 <input type="hidden" name="tab" value="jsearch_slot">
-
-<!-- Fixed parameters -->
-<!--
-<input type="hidden" name="displayMode" value="full">
-<input type="hidden" name="bulkSize" value="10">
-<input type="hidden" name="highlight" value="true">
-<input type="hidden" name="dum" value="true">
--->
+<input type="hidden" name="offset" value="0">
+    
+<!-- need to append search string here, somehow   -->
+<input type="hidden" name="journals" value="any"> 
+    
 <input type="hidden" name="query" id="primoQueryJournal">
-<!--<input type="hidden" name="displayField" value="all">-->
-<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
-<!--<input type="hidden" name="pcAvailabiltyMode" value="true">-->
 <input type="text" id="primoQueryJournalTemp" value="" size="35">
 <!-- Search Button -->
 <input id="goJournal" title="Search" onclick="searchPrimoJournal()" type="button" value="Find Journal" alt="Search" class="search-button">
-
 </form>
 
+
 <!--
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?vid=01CARLI_DPU:CARLI_DPU&tab=jsearch_slot&query=any,contains,engineering
+manual search
+https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?vid=01CARLI_DPU:CARLI_DPU&tab=jsearch_slot&offset=0%26journals%3Dany,journals&query=any,contains,engineering
 
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,engineering&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&journals=any,engineering 
+form
+https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,engineering&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&journals=any,engineering
 
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,history&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&journals=any,history
-
-https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?vid=01CARLI_DPU:CARLI_DPU&tab=Everything&search_scope=MyInst_and_CI&mode=basic&displayMode=full&bulkSize=10&highlight=true&dum=true&query=any,contains,engineering&displayField=all&pcAvailabiltyMode=true
 
 -->
-
