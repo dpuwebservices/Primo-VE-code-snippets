@@ -1,12 +1,12 @@
-
-
 <script type="text/javascript">  
 function searchPrimoJournal() {
-  var searchString=document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
+  
+  var searchStringTmp = document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
+  var searchString="any,contains," + searchStringTmp;
   var url="https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?";
   var vid="01CARLI_DPU:CARLI_DPU";
-  var primoveBasicJournalSearch = url + 'query=' + searchString +'&tab=jsearch_slot&vid=' + vid + '&offset=0&journals=any,journals';
-  window.open(primoveBasicJournalSearch);    
+  var primoveBasicJournalSearch = url + 'query=' + searchString +'&tab=jsearch_slot&vid=' + vid + '&offset=0&journals=any,' + searchStringTmp;
+  window.open(primoveBasicJournalSearch);   
 }
 </script>
 
