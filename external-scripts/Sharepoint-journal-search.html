@@ -1,31 +1,17 @@
 
-  
-  <!-- Script that converts the query string into valid parameter -->
 
 <script type="text/javascript">  
 function searchPrimoJournal() {
   var searchString=document.getElementById("primoQueryJournal").value = "any,contains," + document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
-  var primoveBasicJournalSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=' + searchString +'&vid=01CARLI_DPU:CARLI_DPU&lang=en&offset=0';
+  var url="https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?";
+  var vid="01CARLI_DPU:CARLI_DPU";
+  var primoveBasicJournalSearch = url + 'query=' + searchString +'&tab=jsearch_slot&vid=' + vid + '&offset=0&journals=any,journals';
   window.open(primoveBasicJournalSearch);    
 }
 </script>
 
-<!-- Customizable Parameters -->
-<input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
-<input type="hidden" name="tab" value="Everything">
-<input type="hidden" name="search_scope" value="MyInst_and_CI">
-<input type="hidden" name="mode" value="basic">
-<!-- Fixed parameters -->
-<input type="hidden" name="displayMode" value="full">
-<input type="hidden" name="bulkSize" value="10">
-<input type="hidden" name="highlight" value="true">
-<input type="hidden" name="dum" value="true">
+
 <input type="hidden" name="query" id="primoQueryJournal">
-<input type="hidden" name="displayField" value="all">
-<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
-<input type="hidden" name="pcAvailabiltyMode" value="true">
 <input  type="text" id="primoQueryJournalTemp" value="" size="35" onkeypress="if(event.keyCode===13){searchPrimoJournal(); return false;}">
 <!-- Search Button -->
 <input id="goJournal" title="Search" onclick="searchPrimoJournal()" type="button" value="Find Journal" alt="Search" class="btn btn-primary search-button">
-
-
