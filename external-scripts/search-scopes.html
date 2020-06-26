@@ -18,10 +18,11 @@
         console.log("function called " + scope);
         switch(scope) {
             case "Everything":
-            console.log('at everything')
+
             document.getElementById("primoTab").value = "Everything";
             document.getElementById("primoScope").value = "MyInst_and_CI";
             document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+            console.log('finished everything')
             break;
        
             case "Articles":
@@ -60,7 +61,6 @@
 
     //Windows on load function to load the intitial change
 window.onload = function() {
-    document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";    
     var scope = document.getElementById("scopeSelecter").value; 
     primoScopeSwitch(scope);
 };
