@@ -1,4 +1,8 @@
 <script type="text/javascript">
+    function emptyInput(obj){
+        obj.value="";
+        obj.placeholder="";
+    }
 
 function searchPrimoWithScope() {
     var view = '01CARLI_DPU:CARLI_DPU';
@@ -12,7 +16,16 @@ function searchPrimoWithScope() {
 
 
 function primoScopeSwitch(scope) {
-    switch(scope.value) {
+  console.log("enter function "+scope);
+ 
+
+  if ((typeof scope === 'object') && (scope !== null)) {
+    scope=scope.value;
+    console.log("scope is now "+scope);
+  }
+
+    switch(scope) {
+      
         case "Everything":
         document.getElementById("primoTab").value = "Everything";
         document.getElementById("primoScope").value = "MyInst_and_CI";
@@ -54,10 +67,9 @@ function primoScopeSwitch(scope) {
 
 //Windows on load function to load the intitial change
 window.onload = function() {
-  document.getElementById("scopeSelecter").value = "Everything";
-  document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
   var scope = document.getElementById("scopeSelecter").value; 
-  primoScopeSwitch(scope);
+    console.log("window load "+scope);
+    primoScopeSwitch(scope);
 };
 </script>
 
@@ -88,7 +100,7 @@ window.onload = function() {
 	
 <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
 	<input name="pcAvailabiltyMode" type="hidden" value="true" /> 
-	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
+	<input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="emptyInput(this)" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
 <!-- Search Button --> 
 	<input alt="Go" id="go" onclick="searchPrimoWithScope()" title="Search" type="button" value="Search" />
   
