@@ -1,27 +1,97 @@
 <script type="text/javascript">
-function searchPrimoSimple() {
-document.getElementById("primoQuerySimple").value = "any,contains," + document.getElementById("primoQuerySimpleTemp").value.replace(/[,]/g, " ");
-document.forms["searchFormSimple"].submit();
-}
-</script>
 
-<form id="simple" name="searchFormSimple" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoSimple()">
-<!-- Customizable Parameters -->
-<input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
-<input type="hidden" name="tab" value="Everything">
-<input type="hidden" name="search_scope" value="MyInst_and_CI">
-<input type="hidden" name="mode" value="basic">
-<!-- Fixed parameters -->
-<input type="hidden" name="displayMode" value="full">
-<input type="hidden" name="bulkSize" value="10">
-<input type="hidden" name="highlight" value="true">
-<input type="hidden" name="dum" value="true">
-<input type="hidden" name="query" id="primoQuerySimple">
-<input type="hidden" name="displayField" value="all">
-<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
-<input type="hidden" name="pcAvailabiltyMode" value="true">
-<input type="text" id="primoQuerySimpleTemp" value="" size="35">
-<!-- Search Button -->
-<input id="goSimple" title="Search" onclick="searchPrimoSimple()" type="button" value="Search" alt="Search" class="search-button">
-
-</form>
+    function searchPrimoWithScope() {
+        var view = '01CARLI_DPU:CARLI_DPU';
+        var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+        var searchScope = document.getElementById("primoScope").value; 
+        var searchTab = document.getElementById("primoTab").value; 
+        var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
+                + '&vid=' + view + '&lang=en&offset=0';
+        window.open(primoScopeSearch);
+    }
+    
+    
+    function primoScopeSwitch(scope) {
+        switch(scope.value) {
+            case "Everything":
+            document.getElementById("primoTab").value = "Everything";
+            document.getElementById("primoScope").value = "MyInst_and_CI";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+            break;
+       
+            case "Articles":
+            document.getElementById("primoTab").value = "CentralIndex";
+            document.getElementById("primoScope").value = "CentralIndex";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
+            break;
+    
+          case "Library Catalog":
+            document.getElementById("primoTab").value = "LibraryCatalog";
+            document.getElementById("primoScope").value = "MyInstitution";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
+            break;
+            
+          case "IShare":
+            document.getElementById("primoTab").value = "NewDiscoveryNetwork";
+            document.getElementById("primoScope").value = "NewDiscoveryNetwork";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
+            break;		
+            
+          case "Worldcat":
+            document.getElementById("primoTab").value = "WORLDCAT_API";
+            document.getElementById("primoScope").value = "WORLDCAT_API";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
+            break;		
+    
+          case "CourseReserves":
+            document.getElementById("primoTab").value = "CourseReserves";
+            document.getElementById("primoScope").value = "CourseReserves";
+            document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul courses";
+            break;		
+            
+        }
+    }
+    
+    //Windows on load function to load the intitial change
+    window.onload = function() {
+      document.getElementById("scopeSelecter").value = "Everything";
+      document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
+      var scope = document.getElementById("scopeSelecter").value; 
+      primoScopeSwitch(scope);
+    };
+    </script>
+    
+    
+    <!-- Customizable Parameters -->
+        <input name="institution" type="hidden" value="01CARLI_DPU" /> 
+        <input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
+        <input id="primoTab" name="tab" type="hidden" value="Everything" /> 
+        <input id="primoScope" name="search_scope" type="hidden" value="MyInst_and_CI" /> 
+        <input name="mode" type="hidden" value="Basic" /> 
+    <!-- Fixed parameters --> 
+        <input name="displayMode" type="hidden" value="full" /> 
+        <input name="bulkSize" type="hidden" value="10" /> 
+        <input name="highlight" type="hidden" value="true" /> 
+        <input name="dum" type="hidden" value="true" /> 
+        <input id="primoScopeQuery" name="query" type="hidden" /> 
+        <input name="displayField" type="hidden" value="all" /> 
+        
+    <!-- Select Statement with values from case  Fires onchange --> 
+        <select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" aria-label="search options">
+        <option value="Everything"><label>Everything at DePaul</label></option>
+        <option value="Articles"><label>Articles & More at DePaul</label></option>
+        <option value="Library Catalog"><label>DePaul Library Catalog</label></option>
+        <option value="IShare"><label>All I-Share Libraries</label></option>
+        <option value="Worldcat"><label>Libraries Worldwide</label></option>
+        <option value="CourseReserves"><label>Course Reserves</label></option>
+        </select> 
+        
+    <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
+        <input name="pcAvailabiltyMode" type="hidden" value="true" /> 
+        <input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
+    <!-- Search Button --> 
+        <input alt="Go" id="go" onclick="searchPrimoWithScope()" title="Search" type="button" value="Search" />
+      
+      
+    
+    
