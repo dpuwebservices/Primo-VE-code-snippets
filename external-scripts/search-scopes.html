@@ -16,7 +16,7 @@
     
     function primoScopeSwitch(scope) {
 
-        switch(scope) {
+        switch(scope.value) {
             case "Everything":
             document.getElementById("primoTab").value = "Everything";
             document.getElementById("primoScope").value = "MyInst_and_CI";
@@ -58,7 +58,7 @@
 
     //Windows on load function to load the intitial change
 window.onload = function() {
-    var scope = document.getElementById("scopeSelecter").value; 
+    var scope = document.getElementById("scopeSelecter"); 
     primoScopeSwitch(scope);
 };
 
@@ -82,7 +82,7 @@ window.onload = function() {
         <input name="displayField" type="hidden" value="all" /> 
         
     <!-- Select Statement with values from case  Fires onchange --> 
-        <select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this.value)" aria-label="search options">
+        <select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" aria-label="search options">
         <option value="Everything"><label>Everything at DePaul</label></option>
         <option value="Articles"><label>Articles & More at DePaul</label></option>
         <option value="Library Catalog"><label>DePaul Library Catalog</label></option>
