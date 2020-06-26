@@ -1,19 +1,24 @@
+
 <script type="text/javascript">
+
+    function emptyInput(obj){
+        obj.value="";
+        obj.placeholder="";
+    }
+
 
     function searchPrimoWithScope() {
         var view = '01CARLI_DPU:CARLI_DPU';
         var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
-        var searchScope = document.getElementById("primoScope").value; 
-        var searchTab = document.getElementById("primoTab").value; 
-        var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
-                + '&vid=' + view + '&lang=en&offset=0';
-        window.open(primoScopeSearch);
+        document.forms["primoScopeSearch"].submit();
     }
     
     
     function primoScopeSwitch(scope) {
-        switch(scope.value) {
+        console.log("function called " + scope);
+        switch(scope) {
             case "Everything":
+            console.log('at everything')
             document.getElementById("primoTab").value = "Everything";
             document.getElementById("primoScope").value = "MyInst_and_CI";
             document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
@@ -26,6 +31,7 @@
             break;
     
           case "Library Catalog":
+          console.log('at catalog')
             document.getElementById("primoTab").value = "LibraryCatalog";
             document.getElementById("primoScope").value = "MyInstitution";
             document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
@@ -51,17 +57,19 @@
             
         }
     }
-    
+
     //Windows on load function to load the intitial change
-    window.onload = function() {
-      document.getElementById("scopeSelecter").value = "Everything";
-      document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-      var scope = document.getElementById("scopeSelecter").value; 
-      primoScopeSwitch(scope);
-    };
-    </script>
+window.onload = function() {
+    document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";    
+    var scope = document.getElementById("scopeSelecter").value; 
+    primoScopeSwitch(scope);
+};
+
+</script>
     
     
+<form id="searchScope" name="primoScopeSearch" method="get" target="_self" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoSimple()">
+
     <!-- Customizable Parameters -->
         <input name="institution" type="hidden" value="01CARLI_DPU" /> 
         <input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU" /> 
@@ -77,7 +85,7 @@
         <input name="displayField" type="hidden" value="all" /> 
         
     <!-- Select Statement with values from case  Fires onchange --> 
-        <select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" aria-label="search options">
+        <select id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this.value)" aria-label="search options">
         <option value="Everything"><label>Everything at DePaul</label></option>
         <option value="Articles"><label>Articles & More at DePaul</label></option>
         <option value="Library Catalog"><label>DePaul Library Catalog</label></option>
@@ -88,10 +96,8 @@
         
     <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
         <input name="pcAvailabiltyMode" type="hidden" value="true" /> 
-        <input id="primoScopeQueryTemp" size="35" type="text" value="" aria-label="Search" onfocus="(this).value=''" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
+        <input id="primoScopeQueryTemp" size="35" type="text" value=""  aria-label="Search" onfocus="emptyInput(this)" onkeypress="if(event.keyCode===13){searchPrimoWithScope(); return false;}"/> 
     <!-- Search Button --> 
-        <input alt="Go" id="go" onclick="searchPrimoWithScope()" title="Search" type="button" value="Search" />
-      
-      
-    
-    
+        <input alt="Go" id="go" onclick="searchPrimoWithScope()"  title="Search" type="button" value="Search" />
+</form>
+
