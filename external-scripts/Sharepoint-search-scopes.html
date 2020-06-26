@@ -16,15 +16,8 @@ function searchPrimoWithScope() {
 
 
 function primoScopeSwitch(scope) {
-  console.log("enter function "+scope);
- 
 
-  if ((typeof scope === 'object') && (scope !== null)) {
-    scope=scope.value;
-    console.log("scope is now "+scope);
-  }
-
-    switch(scope) {
+    switch(scope.value) {
       
         case "Everything":
         document.getElementById("primoTab").value = "Everything";
@@ -32,7 +25,7 @@ function primoScopeSwitch(scope) {
         document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
         break;
    
-		case "Articles":
+	  	case "Articles":
         document.getElementById("primoTab").value = "CentralIndex";
         document.getElementById("primoScope").value = "CentralIndex";
         document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
@@ -67,8 +60,8 @@ function primoScopeSwitch(scope) {
 
 //Windows on load function to load the intitial change
 window.onload = function() {
-  var scope = document.getElementById("scopeSelecter").value; 
-    console.log("window load "+scope);
+  var scope = document.getElementById("scopeSelecter"); 
+    console.log("window load "+scope.value);
     primoScopeSwitch(scope);
 };
 </script>
