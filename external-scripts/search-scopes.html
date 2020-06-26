@@ -15,14 +15,12 @@
     
     
     function primoScopeSwitch(scope) {
-        console.log("function called " + scope);
+
         switch(scope) {
             case "Everything":
-
             document.getElementById("primoTab").value = "Everything";
             document.getElementById("primoScope").value = "MyInst_and_CI";
             document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-            console.log('finished everything')
             break;
        
             case "Articles":
@@ -32,7 +30,6 @@
             break;
     
           case "Library Catalog":
-          console.log('at catalog')
             document.getElementById("primoTab").value = "LibraryCatalog";
             document.getElementById("primoScope").value = "MyInstitution";
             document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
