@@ -1,4 +1,10 @@
 <script type="text/javascript">
+
+    function emptyInput(obj){
+        obj.value="";
+        obj.placeholder="";
+    }
+
    function searchPrimoWithScope() {
        var view = '01CARLI_DPU:CARLI_DPU';
        var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
