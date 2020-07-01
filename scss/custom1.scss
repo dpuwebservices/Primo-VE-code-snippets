@@ -73,3 +73,12 @@ md-card.highlight{
 /* Show Main Menu links on Services Page */
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {display: inline;}
 
+// Hide RefWorks
+
+.my-refworks-ctm {
+  display: none;
+  }
+ .my-refworks-separator-ctm {
+  display: none;
+  }
+ 

@@ -82,3 +82,13 @@ md-card.highlight {
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   display: inline;
 }
+
+/* line 78, ../../scss/custom1.scss */
+.my-refworks-ctm {
+  display: none;
+}
+
+/* line 81, ../../scss/custom1.scss */
+.my-refworks-separator-ctm {
+  display: none;
+}
