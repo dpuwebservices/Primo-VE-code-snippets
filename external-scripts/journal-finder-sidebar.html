@@ -1,0 +1,22 @@
+<script type="text/javascript">
+function searchPrimoJournalSB() {
+  var tmpSearch=document.getElementById("primoQueryJournalSBTemp").value.replace(/[,]/g, " ");
+  document.getElementById("JournalSBsParm").value = "any," + tmpSearch;
+  document.getElementById("primoQueryJournalSB").value = "any,contains," + tmpSearch;
+  document.forms["searchFormJournalSB"].submit();
+  console.log(searchFormJournalSBSB + "\n compared to " + "https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?query=any,contains,xxx&tab=jsearch_slot&vid=01CARLI_DPU:CARLI_DPU&offset=0&JournalSBSBs=any,xxx");
+}
+</script>
+
+<form id="JournalSBSB-search" name="searchFormJournalSBSB" method="get" target="_blank" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoJournalSBSB()">
+<!-- Customizable Parameters -->
+<input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
+<input type="hidden" name="tab" value="jsearch_slot">
+<input type="hidden" name="offset" value="0">
+<input type="hidden" name="JournalSBs" id="JournalSBsParm" value=""> 
+<input type="hidden" name="query" id="primoQueryJournalSB">
+<input type="text" id="primoQueryJournalSBTemp" value="" size="10">
+<!-- Search Button -->
+<input id="goJournalSB" title="Search" onclick="searchPrimoJournalSB()" type="button" value="Search" alt="Search" class="search-button">
+</form>
+
