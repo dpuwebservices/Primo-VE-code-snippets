@@ -1,0 +1,1 @@
+This repo is now deprecated. Use https://github.com/dpuwebservices/primove-local-dev instead. 
