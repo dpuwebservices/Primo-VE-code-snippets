@@ -1,1 +1,1 @@
-This repo is now deprecated. Use https://github.com/dpuwebservices/primove-local-dev instead. 
+This repo is only for the custom Javascript we need to write for Sharepoint and LibGuide widgets. Use https://github.com/dpuwebservices/primove-local-dev instead. 
