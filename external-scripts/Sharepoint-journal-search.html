@@ -1,7 +1,7 @@
 <script type="text/javascript">  
 function searchPrimoJournal() {
   
-  var searchStringTmp = document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ");
+  var searchStringTmp = document.getElementById("primoQueryJournalTemp").value.replace(/[,]/g, " ").replace("&", "%26");
   var searchString="any,contains," + searchStringTmp;
   var url="https://i-share-dpu.primo.exlibrisgroup.com/discovery/jsearch?";
   var vid="01CARLI_DPU:CARLI_DPU";
