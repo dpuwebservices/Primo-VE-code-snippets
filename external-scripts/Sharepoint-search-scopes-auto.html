@@ -21,7 +21,7 @@
 //Primo searchPrimo() function
 //Passes request to primo site
 function searchPrimo() {
-document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryText").value.replace(/[,]/g, " ");
+document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryText").value.replace(/[,]/g, " ").replace("&", "%26");
 document.forms["searchForm"].submit();
 }
 //These are the search options matching what is on Primo

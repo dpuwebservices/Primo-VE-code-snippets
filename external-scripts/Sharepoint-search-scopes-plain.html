@@ -6,7 +6,7 @@
 
 function searchPrimoWithScope() {
     var view = '01CARLI_DPU:CARLI_DPU';
-    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
+    var scopeSearchString=document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ").replace("&", "%26");
     var searchScope = document.getElementById("primoScope").value; 
     var searchTab = document.getElementById("primoTab").value; 
     var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString +'&tab=' + searchTab + '&search_scope=' + searchScope 
