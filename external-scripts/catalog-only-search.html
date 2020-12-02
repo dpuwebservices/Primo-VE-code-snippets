@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    function searchPrimoCatalog() {
+    document.getElementById("primoQueryCatalog").value = "any,contains," + document.getElementById("primoQueryCatalogTemp").value.replace(/[,]/g, " ");
+    document.forms["searchFormCatalog"].submit();
+    }
+    </script>
+    
+    <form id="catalog-search" name="searchFormCatalog" method="get" target="_blank" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoCatalog()">
+    <!-- Customizable Parameters -->
+    <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
+    <input type="hidden" name="tab" value="LibraryCatalog">
+    <input type="hidden" name="search_scope" value="MyInstitution">
+    <input type="hidden" name="mode" value="basic">
+    <!-- Fixed parameters -->
+    <input type="hidden" name="displayMode" value="full">
+    <input type="hidden" name="bulkSize" value="10">
+    <input type="hidden" name="highlight" value="true">
+    <input type="hidden" name="dum" value="true">
+    <input type="hidden" name="query" id="primoQueryCatalog">
+    <input type="hidden" name="displayField" value="all">
+    <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+    <input type="hidden" name="pcAvailabiltyMode" value="true">
+    <input type="text" id="primoQueryCatalogTemp" value="" size="35">
+    <!-- Search Button -->
+    <input id="goCatalog" title="Search" onclick="searchPrimoCatalog()" type="button" value="Search Catalog" alt="Search" class="search-button">
+    
+    </form>
+    
