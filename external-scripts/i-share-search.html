@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    function searchPrimoIShare() {
+    document.getElementById("primoQueryIShare").value = "any,contains," + document.getElementById("primoQueryIShareTemp").value.replace(/[,]/g, " ");
+    document.forms["searchFormIShare"].submit();
+    }
+    </script>
+    
+    <form id="ishare-search" name="searchFormIShare" method="get" target="_blank" action="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoIShare()">
+    <!-- Customizable Parameters -->
+    <input type="hidden" name="vid" value="01CARLI_DPU:CARLI_DPU">
+    <input type="hidden" name="tab" value="NewDiscoveryNetwork">
+    <input type="hidden" name="search_scope" value="NewDiscoveryNetwork">
+    <input type="hidden" name="mode" value="basic">
+    <!-- Fixed parameters -->
+    <input type="hidden" name="displayMode" value="full">
+    <input type="hidden" name="bulkSize" value="10">
+    <input type="hidden" name="highlight" value="true">
+    <input type="hidden" name="dum" value="true">
+    <input type="hidden" name="query" id="primoQueryIShare">
+    <input type="hidden" name="displayField" value="all">
+    <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+    <input type="hidden" name="pcAvailabiltyMode" value="true">
+    <input type="text" id="primoQueryIShareTemp" value="" size="35">
+    <!-- Search Button -->
+    <input id="goIShare" title="Search" onclick="searchPrimoIShare()" type="button" value="Search all I-Share Libraries" alt="Search" class="search-button">
+    
+    </form>
+    
