@@ -1,5 +1,5 @@
 <style>
-    /* Piya */
+    /* Piya 6-16-21 1:51pm */
 
     .typeahead__container {
         padding: 15px;
@@ -665,8 +665,7 @@
                                  <div class="typeahead__query"> 
                                     <input name="q" class="js-typeahead" id="search_txt" autocomplete="off"/>&#160;</div> 
                                  <div class="typeahead__button"> 
-                                    <button type="submit">
-                                       <span class="typeahead__search-icon"></span></button>&#160;</div>
+                                    <button type="submit"><span class="typeahead__search-icon"></span></button>&#160;</div>
                               </div>
                            </div> 
                            <script>
@@ -697,6 +696,9 @@
                                         return item.display + " in " + item.display;
                                     },
                                     source: {
+                                        "Everything at DePaul": {
+                                            data: ["Everything at DePaul"]
+                                        },
                                         "Articles &amp; More at DePaul": {
                                             data: ["Articles & More at DePaul"]
                                         },
@@ -710,10 +712,7 @@
                                             data: ["Libraries Worldwide"]
                                         },
                                         "Course Reserves": {
-                                            data: [
-                                                "Course Reserves",
-                                                "Everything at DePaul"
-                                            ]
+                                            data: ["Course Reserves"]
                                         }
                                     },
                                     callback: {
@@ -773,9 +772,12 @@
                </div> 
                <div class="block row"> 
                   <div class="col-sm-9"> 
-                     <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent"><strong>A–Z Databases</strong></a>&#160;|&#160; 
-                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"><strong>Research Guides</strong></a>&#160;|&#160; 
-                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"><strong>E-book Search</strong></a> </div> 
+                     <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent">
+                        <strong>A–Z Databases</strong></a>&#160;|&#160; 
+                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"> 
+                        <strong>Research Guides</strong></a>&#160;|&#160; 
+                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"> 
+                        <strong>E-book Search</strong></a> </div> 
                   <div class="col-sm-3"> 
                      <a id="advanced-search" href="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_DPU:CARLI_DPU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced Search</a> </div> 
                </div> 
