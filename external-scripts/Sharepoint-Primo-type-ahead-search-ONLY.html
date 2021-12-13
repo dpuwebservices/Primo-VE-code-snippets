@@ -580,10 +580,18 @@
 	}
   
   
-</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script>
-
-
-<!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
+</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><!-- Customizable Parameters --> 
+   <input name="institution" type="hidden" value="01CARLI_DPU"/> 
+   <input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/> 
+   <input name="tab" id="primoTab" type="hidden" value="Everything"/> 
+   <input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/> 
+   <input name="mode" type="hidden" value="Basic"/> 
+   <input name="displayMode" type="hidden" value="full"/> 
+   <input name="bulkSize" type="hidden" value="10"/> 
+   <input name="highlight" type="hidden" value="true"/> 
+   <input name="dum" type="hidden" value="true"/> 
+   <input name="query" id="primoScopeQuery" type="hidden"/> 
+   <input name="displayField" type="hidden" value="all"/> 
    <div class="row"> 
       <div class="col-md-8 col-sm-12 m40-t"> 
          <div class="card" id="discovery_container"> 
@@ -604,7 +612,8 @@
                                  <div class="typeahead__query"> 
                                     <input name="q" class="js-typeahead" id="search_txt" autocomplete="off"/>&#160;</div> 
                                  <div class="typeahead__button"> 
-                                    <button type="submit"><span class="typeahead__search-icon"></span></button>&#160;</div>
+                                    <button type="submit">
+                                       <span class="typeahead__search-icon"></span></button>&#160;</div>
                               </div>
                            </div> 
                            <script>
@@ -657,7 +666,7 @@
                                     callback: {
                                         onReady: function (node) {
                                             this.container.find('.' + this.options.selector.dropdownItem + '.group-ale a').trigger('click')
-                                        }<span id='ms-rterangeselectionplaceholder-start'></span><span id='ms-rterangeselectionplaceholder-end'></span>,
+                                        },
                                         onDropdownFilter: function (node, query, filter, result) {
                                         },
                                         onLayoutBuiltAfter: function (node, query, filter, result) {
@@ -700,22 +709,22 @@
                                     var scopeSearchString = "any,contains," + qStr.replace(/[,]/g, " ");
                                     var searchScope = qScopeVal;
                                     var searchTab = qScopeTab;
-                                    window.location.href = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString
+                                    
+                                  window.open('https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString
                                         + '&tab=' + searchTab
                                         + '&search_scope=' + searchScope
                                         + '&vid=' + view
-                                        + '&lang=en&offset=0';
+                                        + '&lang=en&offset=0', '_blank');
                                     return false;
                                 }</script></div> 
                         <!-- pphongsa 11/4/20 : end --></div>
                </div> 
                <div class="block row"> 
                   <div class="col-sm-12"> 
-                     <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent">
-                        <strong>A–Z Databases</strong></a>&#160;|&#160; 
-                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"> 
+                     <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent"><strong>A–Z Databases</strong></a>&#160;|&#160; 
+                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent">
                         <strong>Research Guides</strong></a>&#160;|&#160; 
-                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"> 
+                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent">
                         <strong>E-book Search</strong></a> </div> 
                   <div class="col-sm-3"> 
                      <a id="advanced-search" href="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_DPU:CARLI_DPU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced Search</a> </div> 
@@ -723,4 +732,4 @@
             </div> 
          </div> 
       </div> 
-   </div> 
+   </div>
