@@ -580,71 +580,10 @@
 	}
   
   
-</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><script type="text/javascript">
-    function emptyInput(obj) {
-        obj.value = "";
-        obj.placeholder = "";
-    }
-
-    function searchPrimoWithScope() {
-        var view = '01CARLI_DPU:CARLI_DPU';
-        var scopeSearchString = document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
-        var searchScope = document.getElementById("primoScope").value;
-        var searchTab = document.getElementById("primoTab").value;
-        var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString + '&tab=' + searchTab + '&search_scope=' + searchScope
-            + '&vid=' + view + '&lang=en&offset=0';
-        window.open(primoScopeSearch);
-    }
+</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script>
 
 
-    function primoScopeSwitch(scope) {
-        switch (scope.value) {
-            case "Everything":
-                document.getElementById("primoTab").value = "Everything";
-                document.getElementById("primoScope").value = "MyInst_and_CI";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-                break;
-
-            case "Articles":
-                document.getElementById("primoTab").value = "CentralIndex";
-                document.getElementById("primoScope").value = "CentralIndex";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
-                break;
-
-            case "Library Catalog":
-                document.getElementById("primoTab").value = "LibraryCatalog";
-                document.getElementById("primoScope").value = "MyInstitution";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
-                break;
-
-            case "IShare":
-                document.getElementById("primoTab").value = "NewDiscoveryNetwork";
-                document.getElementById("primoScope").value = "NewDiscoveryNetwork";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
-                break;
-
-            case "Worldcat":
-                document.getElementById("primoTab").value = "WORLDCAT_API";
-                document.getElementById("primoScope").value = "WORLDCAT_API";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
-                break;
-
-            case "CourseReserves":
-                document.getElementById("primoTab").value = "CourseReserves";
-                document.getElementById("primoScope").value = "CourseReserves";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul courses";
-                break;
-
-        }
-    }
-
-    window.onload = function () {
-        document.getElementById("scopeSelecter").value = "Everything";
-        document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-        var scope = document.getElementById("scopeSelecter").value;
-        primoScopeSwitch(scope);
-    };
-</script><!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
+<!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
    <div class="row"> 
       <div class="col-md-8 col-sm-12 m40-t"> 
          <div class="card" id="discovery_container"> 
