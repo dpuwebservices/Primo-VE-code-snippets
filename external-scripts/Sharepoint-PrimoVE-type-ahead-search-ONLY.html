@@ -580,25 +580,14 @@
 	}
   
   
-</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><!-- Customizable Parameters --> 
-   <input name="institution" type="hidden" value="01CARLI_DPU"/> 
-   <input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/> 
-   <input name="tab" id="primoTab" type="hidden" value="Everything"/> 
-   <input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/> 
-   <input name="mode" type="hidden" value="Basic"/> 
-   <input name="displayMode" type="hidden" value="full"/> 
-   <input name="bulkSize" type="hidden" value="10"/> 
-   <input name="highlight" type="hidden" value="true"/> 
-   <input name="dum" type="hidden" value="true"/> 
-   <input name="query" id="primoScopeQuery" type="hidden"/> 
-   <input name="displayField" type="hidden" value="all"/> 
+</style><script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
    <div class="row"> 
       <div class="col-md-8 col-sm-12 m40-t"> 
          <div class="card" id="discovery_container"> 
             <div class="block card-body bg-light shadow-sm"> 
                <div class="row align-items-center"> 
                   <div class="col-sm-12"> 
-                     <h2 class="header">LibrarySearch</h2> 
+                     <h2 class="header">LibrarySearch<br/></h2> 
                      <p class="header"> 
                         <a href="https://libguides.depaul.edu/migration">Learn more</a> </p> 
                   </div> 
@@ -673,16 +662,22 @@
                                             $('.typeahead__list').css('width', $('.typeahead__query').css('width'));
                                         },
                                         onClick: function (node, form, item, event) {
-                                            goSearch($('#search_txt').val(), item.display);
+                                            goSearchClick($('#search_txt').val(), item.display, item);
+
                                         },
                                         onSubmit: function (node, form, item, event) {
                                             event.preventDefault();
-                                            return goSearch($('#search_txt').val(), $('.typeahead__filter-button').text());
+											return goSearch($('#search_txt').val(), $('.typeahead__filter-button').text());
                                         }
                                     },
                                 });
+								
+								function goSearchClick(qStr, qScope, qItem){
+                                  qItem.display = qStr;
+									goSearch(qStr, qScope);
+								}
                                 function goSearch(qStr, qScope) {
-                                    console.log("qScope = ["+ qScope +"]");
+                                   
                                     qScopeTab = "Everything";
                                     qScopeVal = "MyInst_and_CI";
                                     if ("Articles & More at DePaul" === qScope) {
@@ -709,6 +704,8 @@
                                     var scopeSearchString = "any,contains," + qStr.replace(/[,]/g, " ");
                                     var searchScope = qScopeVal;
                                     var searchTab = qScopeTab;
+									
+									
                                     
                                   window.open('https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString
                                         + '&tab=' + searchTab
@@ -722,9 +719,9 @@
                <div class="block row"> 
                   <div class="col-sm-12"> 
                      <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent"><strong>A–Z Databases</strong></a>&#160;|&#160; 
-                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent">
+                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"> 
                         <strong>Research Guides</strong></a>&#160;|&#160; 
-                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent">
+                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"> 
                         <strong>E-book Search</strong></a> </div> 
                   <div class="col-sm-3"> 
                      <a id="advanced-search" href="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_DPU:CARLI_DPU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced Search</a> </div> 
