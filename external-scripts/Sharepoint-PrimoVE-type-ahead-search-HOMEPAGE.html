@@ -505,236 +505,161 @@
     }
  </style>
  
-
-<script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><script type="text/javascript">
-    function emptyInput(obj) {
-        obj.value = "";
-        obj.placeholder = "";
-    }
-
-    function searchPrimoWithScope() {
-        var view = '01CARLI_DPU:CARLI_DPU';
-        var scopeSearchString = document.getElementById("primoScopeQuery").value = "any,contains," + document.getElementById("primoScopeQueryTemp").value.replace(/[,]/g, " ");
-        var searchScope = document.getElementById("primoScope").value;
-        var searchTab = document.getElementById("primoTab").value;
-        var primoScopeSearch = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString + '&tab=' + searchTab + '&search_scope=' + searchScope
-            + '&vid=' + view + '&lang=en&offset=0';
-        window.open(primoScopeSearch);
-    }
-
-
-    function primoScopeSwitch(scope) {
-        switch (scope.value) {
-            case "Everything":
-                document.getElementById("primoTab").value = "Everything";
-                document.getElementById("primoScope").value = "MyInst_and_CI";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-                break;
-
-            case "Articles":
-                document.getElementById("primoTab").value = "CentralIndex";
-                document.getElementById("primoScope").value = "CentralIndex";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Articles and more";
-                break;
-
-            case "Library Catalog":
-                document.getElementById("primoTab").value = "LibraryCatalog";
-                document.getElementById("primoScope").value = "MyInstitution";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Print books,DVDs,and journals";
-                break;
-
-            case "IShare":
-                document.getElementById("primoTab").value = "NewDiscoveryNetwork";
-                document.getElementById("primoScope").value = "NewDiscoveryNetwork";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from I-Share Libraries";
-                break;
-
-            case "Worldcat":
-                document.getElementById("primoTab").value = "WORLDCAT_API";
-                document.getElementById("primoScope").value = "WORLDCAT_API";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Books & more from libraries around the worldI-Share Libraries";
-                break;
-
-            case "CourseReserves":
-                document.getElementById("primoTab").value = "CourseReserves";
-                document.getElementById("primoScope").value = "CourseReserves";
-                document.getElementById("primoScopeQueryTemp").placeholder = "Items specific to DePaul courses";
-                break;
-
-        }
-    }
-
-    window.onload = function () {
-        document.getElementById("scopeSelecter").value = "Everything";
-        document.getElementById("primoScopeQueryTemp").placeholder = "Books, articles, media, and more";
-        var scope = document.getElementById("scopeSelecter").value;
-        primoScopeSwitch(scope);
-    };
-</script><!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
-   <div class="row"> 
-      <div class="col-md-8 col-sm-12 m40-t"> 
-         <div class="card" id="discovery_container"> 
-            <div class="block card-body bg-light shadow-sm"> 
-               <div class="row align-items-center"> 
-                  <div class="col-sm-12"> 
-                     <h2 class="header">LibrarySearch</h2> 
-                     <p class="header"> 
-                        <a href="https://libguides.depaul.edu/migration">Learn more</a> </p> 
-                  </div> 
-               </div> 
-               <div class="block"> 
-                  <div class="block row"> 
-                     <!-- pphongsa 11/4/20 : begin --> 
-                        <div style="margin: 0px auto; width: 100%; max-width: 800px;"> 
-                           <div class="typeahead__container"> 
-                              <div class="typeahead__field"> 
-                                 <div class="typeahead__query"> 
-                                    <input name="q" class="js-typeahead" id="search_txt" autocomplete="off"/>&#160;</div> 
-                                 <div class="typeahead__button"> 
-                                    <button type="submit"><span class="typeahead__search-icon"></span></button>&#160;</div>
-                              </div>
-                           </div> 
-                           <script>
-                                function extractor(query) {
-                                    var result = /([^,]+)$/.exec(query);
-                                    if (result && result[1]) return result[1].trim();
-                                    return '';
-                                }
-                                typeof $.typeahead === 'function' && $.typeahead({
-                                    input: ".js-typeahead",
-                                    minLength: 3,
-                                    maxItem: 15,
-                                    order: "asc",
-                                    hint: false,
-                                    group: false,
-                                    href: null,
-                                    dropdownFilter: "Everything at DePaul",
-                                    emptyTemplate: '',
-                                    highlight: false,
-                                    template: function () {
-                                        $('.typeahead__list').width(450);
-                                        var tquery = extractor(this.query);
-                                        return '<strong>' + tquery + '</strong> &#x2315; {{display}}';
-                                    },
-                                    filter: function (item, displayKey) {
-                                        $('.typeahead__list').width(450);
-                                        var tquery = extractor(this.query);
-                                        return item.display + " in " + item.display;
-                                    },
-                                    source: {
-                                        "Everything at DePaul": {
-                                            data: ["Everything at DePaul"]
-                                        },
-                                        "Articles &amp; More at DePaul": {
-                                            data: ["Articles & More at DePaul"]
-                                        },
-                                        "DePaul Library Catalog": {
-                                            data: ["DePaul Library Catalog"]
-                                        },
-                                        "All I-Share Libraries": {
-                                            data: ["All I-Share Libraries"]
-                                        },
-                                        "Libraries Worldwide": {
-                                            data: ["Libraries Worldwide"]
-                                        },
-                                        "Course Reserves": {
-                                            data: ["Course Reserves"]
-                                        }
-                                    },
-                                    callback: {
-                                        onReady: function (node) {
-                                            this.container.find('.' + this.options.selector.dropdownItem + '.group-ale a').trigger('click')
-                                        }<span id='ms-rterangeselectionplaceholder-start'></span><span id='ms-rterangeselectionplaceholder-end'></span>,
-                                        onDropdownFilter: function (node, query, filter, result) {
-                                        },
-                                        onLayoutBuiltAfter: function (node, query, filter, result) {
-                                            $('.typeahead__list').css('width', $('.typeahead__query').css('width'));
-                                        },
-                                        onClick: function (node, form, item, event) {
-                                            goSearch($('#search_txt').val(), item.display);
-                                        },
-                                        onSubmit: function (node, form, item, event) {
-                                            event.preventDefault();
-                                            return goSearch($('#search_txt').val(), $('.typeahead__filter-button').text());
-                                        }
-                                    },
-                                });
-                                function goSearch(qStr, qScope) {
-                                    console.log("qScope = ["+ qScope +"]");
-                                    qScopeTab = "Everything";
-                                    qScopeVal = "MyInst_and_CI";
-                                    if ("Articles & More at DePaul" === qScope) {
-                                        qScopeTab = "CentralIndex";
-                                        qScopeVal = "CentralIndex";
-                                    }
-                                    if ("DePaul Library Catalog" === qScope) {
-                                        qScopeTab = "LibraryCatalog";
-                                        qScopeVal = "MyInstitution";
-                                    }
-                                    if ("All I-Share Libraries" === qScope) {
-                                        qScopeTab = "NewDiscoveryNetwork";
-                                        qScopeVal = "NewDiscoveryNetwork";
-                                    }
-                                    if ("Libraries Worldwide" === qScope) {
-                                        qScopeTab = "WORLDCAT_API";
-                                        qScopeVal = "WORLDCAT_API";
-                                    }
-                                    if ("Course Reserves" === qScope) {
-                                        qScopeTab = "CourseReserves";
-                                        qScopeVal = "CourseReserves";
-                                    }
-                                    var view = '01CARLI_DPU:CARLI_DPU';
-                                    var scopeSearchString = "any,contains," + qStr.replace(/[,]/g, " ");
-                                    var searchScope = qScopeVal;
-                                    var searchTab = qScopeTab;
-                                    window.location.href = 'https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString
-                                        + '&tab=' + searchTab
-                                        + '&search_scope=' + searchScope
-                                        + '&vid=' + view
-                                        + '&lang=en&offset=0', '_blank');
-                                    return false;
-                                }</script></div> 
-                        <!-- pphongsa 11/4/20 : end --></div>
-               </div> 
-               <div class="block row"> 
-                  <div class="col-sm-9"> 
-                     <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent">
-                        <strong>A–Z Databases</strong></a>&#160;|&#160; 
-                     <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"> 
-                        <strong>Research Guides</strong></a>&#160;|&#160; 
-                     <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"> 
-                        <strong>E-book Search</strong></a> </div> 
-                  <div class="col-sm-3"> 
-                     <a id="advanced-search" href="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_DPU:CARLI_DPU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced Search</a> </div> 
-               </div> 
-            </div> 
-         </div> 
-         <div class="card m30-b m40-t bg-light shadow-sm"> 
-            <p id="statement"> 
-                The Library is committed to the values of Inclusion, Diversity, Equity, and Accessibility. <a href="https://library.depaul.edu/about/about-the-library/inclusion-diversity-equity-accessibility/Pages/default.aspx">Learn more</a>.
-            </p> 
-         </div> 
-      </div> 
-      <div class="col-md-4 col-sm-12"> 
-         <div class="card m30-b m40-t"> 
-            <div class="card-body bg-light shadow-sm"> 
-               <h2 class="m15-b m0-t h3"> 
-                  <a href="/get-help/ask-a-librarian/Pages/default.aspx">Ask a Librarian</a><br/> </h2> 
-               <div class="cta-type4 w-100 cta-lib-green askChatLink" id="libchat_7b2a902a956b36f5f1006242c263e993"> 
-               </div> 
-               <a class="btn btn-primary d-block" href="/get-help/ask-a-librarian/Pages/Make-an-Appointment.aspx" style="margin-top: 5px;">Make an Appointment</a> 
-               <div class="ask-a-librarian"> 
-                  <p style="margin-top: 15px; margin-bottom: 0px;">You can also contact us by:</p> 
-                  <div class="row"> 
-                     <div class="col-md-4 col-sm-12"> 
-                        <a class="btn btn-primary w100" href="/about/contact-us/Pages/default.aspx">Phone</a> </div> 
-                     <div class="col-md-4 col-sm-12"> 
-                        <a class="btn btn-primary w100" href="/get-help/ask-a-librarian/Pages/default.aspx">Text</a> </div> 
-                     <div class="col-md-4 col-sm-12"> 
-                        <a class="btn btn-primary w100" href="http://libguides.depaul.edu/email-a-librarian">Email</a> </div> 
-                  </div> 
-                  <a class="btn btn-primary" href="/about/hours/Pages/default.aspx" style="margin-top: 15px;">Library Hours</a></div> 
-            </div> 
-         </div> 
-      </div> 
-   </div> 
+ <script src="/_layouts/15/DU.SPBaseLibs/js/typeaheadLibrary/jquery.typeahead.beta.js"></script><!-- Customizable Parameters --><input name="institution" type="hidden" value="01CARLI_DPU"/><input name="vid" type="hidden" value="01CARLI_DPU:CARLI_DPU"/><input name="tab" id="primoTab" type="hidden" value="Everything"/><input name="search_scope" id="primoScope" type="hidden" value="MyInst_and_CI"/><input name="mode" type="hidden" value="Basic"/><input name="displayMode" type="hidden" value="full"/><input name="bulkSize" type="hidden" value="10"/><input name="highlight" type="hidden" value="true"/><input name="dum" type="hidden" value="true"/><input name="query" id="primoScopeQuery" type="hidden"/><input name="displayField" type="hidden" value="all"/> 
+ <div class="row">
+    <div class="col-md-8 col-sm-12 m40-t">
+       <div class="card" id="discovery_container">
+          <div class="block card-body bg-light shadow-sm">
+             <div class="row align-items-center">
+                <div class="col-sm-12">
+                   <h2 class="header">LibrarySearch<br/></h2>
+                   <p class="header"> 
+                      <a href="https://libguides.depaul.edu/migration">Learn more</a> 
+                   </p>
+                </div>
+             </div>
+             <div class="block">
+                <div class="block row">
+                   <!-- pphongsa 11/4/20 : begin --> 
+                   <div style="margin: 0px auto; width: 100%; max-width: 800px;">
+                      <div class="typeahead__container">
+                         <div class="typeahead__field">
+                            <div class="typeahead__query"> 
+                               <input name="q" class="js-typeahead" id="search_txt" autocomplete="off"/>&#160;
+                            </div>
+                            <div class="typeahead__button"> 
+                               <button type="submit">
+                               <span class="typeahead__search-icon"></span></button>&#160;
+                            </div>
+                         </div>
+                      </div>
+                      <script>
+                         function extractor(query) {
+                             var result = /([^,]+)$/.exec(query);
+                             if (result && result[1]) return result[1].trim();
+                             return '';
+                         }
+                         typeof $.typeahead === 'function' && $.typeahead({
+                             input: ".js-typeahead",
+                             minLength: 3,
+                             maxItem: 15,
+                             order: "asc",
+                             hint: false,
+                             group: false,
+                             href: null,
+                             dropdownFilter: "Everything at DePaul",
+                             emptyTemplate: '',
+                             highlight: false,
+                             template: function () {
+                                 $('.typeahead__list').width(450);
+                                 var tquery = extractor(this.query);
+                                 return '<strong>' + tquery + '</strong> &#x2315; {{display}}';
+                             },
+                             filter: function (item, displayKey) {
+                                 $('.typeahead__list').width(450);
+                                 var tquery = extractor(this.query);
+                                 return item.display + " in " + item.display;
+                             },
+                             source: {
+                                 "Everything at DePaul": {
+                                     data: ["Everything at DePaul"]
+                                 },
+                                 "Articles &amp; More at DePaul": {
+                                     data: ["Articles & More at DePaul"]
+                                 },
+                                 "DePaul Library Catalog": {
+                                     data: ["DePaul Library Catalog"]
+                                 },
+                                 "All I-Share Libraries": {
+                                     data: ["All I-Share Libraries"]
+                                 },
+                                 "Libraries Worldwide": {
+                                     data: ["Libraries Worldwide"]
+                                 },
+                                 "Course Reserves": {
+                                     data: ["Course Reserves"]
+                                 }
+                             },
+                             callback: {
+                                 onReady: function (node) {
+                                     this.container.find('.' + this.options.selector.dropdownItem + '.group-ale a').trigger('click')
+                                 },
+                                 onDropdownFilter: function (node, query, filter, result) {
+                                 },
+                                 onLayoutBuiltAfter: function (node, query, filter, result) {
+                                     $('.typeahead__list').css('width', $('.typeahead__query').css('width'));
+                                 },
+                                 onClick: function (node, form, item, event) {
+                                     goSearchClick($('#search_txt').val(), item.display, item);
+                         
+                                 },
+                                 onSubmit: function (node, form, item, event) {
+                                     event.preventDefault();
+                         return goSearch($('#search_txt').val(), $('.typeahead__filter-button').text());
+                                 }
+                             },
+                         });
+                         
+                         function goSearchClick(qStr, qScope, qItem){
+                           qItem.display = qStr;
+                         goSearch(qStr, qScope);
+                         }
+                         function goSearch(qStr, qScope) {
+                            
+                             qScopeTab = "Everything";
+                             qScopeVal = "MyInst_and_CI";
+                             if ("Articles & More at DePaul" === qScope) {
+                                 qScopeTab = "CentralIndex";
+                                 qScopeVal = "CentralIndex";
+                             }
+                             if ("DePaul Library Catalog" === qScope) {
+                                 qScopeTab = "LibraryCatalog";
+                                 qScopeVal = "MyInstitution";
+                             }
+                             if ("All I-Share Libraries" === qScope) {
+                                 qScopeTab = "NewDiscoveryNetwork";
+                                 qScopeVal = "NewDiscoveryNetwork";
+                             }
+                             if ("Libraries Worldwide" === qScope) {
+                                 qScopeTab = "WORLDCAT_API";
+                                 qScopeVal = "WORLDCAT_API";
+                             }
+                             if ("Course Reserves" === qScope) {
+                                 qScopeTab = "CourseReserves";
+                                 qScopeVal = "CourseReserves";
+                             }
+                             var view = '01CARLI_DPU:CARLI_DPU';
+                             var scopeSearchString = "any,contains," + qStr.replace(/[,]/g, " ");
+                             var searchScope = qScopeVal;
+                             var searchTab = qScopeTab;
+                         
+                         
+                             
+                           window.open('https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?query=' + scopeSearchString
+                                 + '&tab=' + searchTab
+                                 + '&search_scope=' + searchScope
+                                 + '&vid=' + view
+                                 + '&lang=en&offset=0', '_blank');
+                             return false;
+                         }
+                      </script>
+                   </div>
+                   <!-- pphongsa 11/4/20 : end -->
+                </div>
+             </div>
+             <div class="block row">
+                <div class="col-sm-12"> 
+                   <a title="A to Z Databases" href="https://libguides.depaul.edu/az.php" target="_parent"><strong>A–Z Databases</strong></a>&#160;|&#160; 
+                   <a title="Research Guides" href="https://libguides.depaul.edu/" target="_parent"> 
+                   <strong>Research Guides</strong></a>&#160;|&#160; 
+                   <a title="E-book Search" href="https://libguides.depaul.edu/ebooks" target="_parent"> 
+                   <strong>E-book Search</strong></a> 
+                </div>
+                <div class="col-sm-3"> 
+                   <a id="advanced-search" href="https://i-share-dpu.primo.exlibrisgroup.com/discovery/search?vid=01CARLI_DPU:CARLI_DPU&amp;lang=en&amp;mode=advanced" target="_blank">Advanced Search</a> 
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
